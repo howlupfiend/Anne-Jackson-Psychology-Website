@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sage-600: #789c8a;
+  --color-sage-700: #5c7e6e;
+}
