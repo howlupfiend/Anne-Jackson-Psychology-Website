@@ -52,12 +52,35 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative">
-      <div className="text-center mb-12">
+<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative">
+      
+      {/* Main Header */}
+      <div className="text-center mb-8">
         <h2 className="text-4xl lg:text-5xl font-serif text-[#242221] mb-4">Get in Touch</h2>
         <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-          If you have any questions or would like to book an initial consultation, please send a message below.
+          If you would like to find out more about therapy, you’re welcome to use the form below to get in touch.
         </p>
+      </div>
+
+      {/* Organized Info Box */}
+      <div className="bg-emerald-50/50 p-6 md:p-8 rounded-3xl border border-emerald-100 mb-10 text-stone-700 max-w-3xl mx-auto shadow-sm">
+        <div className="space-y-4 text-base md:text-lg">
+          
+          <div className="flex items-start">
+            <span className="text-emerald-600 mr-3 mt-1 text-xl leading-none">•</span>
+            <p>
+              If you’re interested in arranging an Initial Consultation, please tell me a little about what you’re experiencing and what you hope therapy might help with. You only need to share what you feel comfortable including at this stage. This information helps me gain an initial understanding of your needs and consider whether my approach may be suitable for you.
+            </p>
+          </div>
+
+          <div className="flex items-start">
+            <span className="text-emerald-600 mr-3 mt-1 text-xl leading-none">•</span>
+            <p>
+              After receiving your message, I’ll contact you to discuss the next steps, arrange an Initial Consultation if appropriate, or answer any questions you may have. I aim to reply to enquiries within two working days.
+            </p>
+          </div>
+
+        </div>
       </div>
       
       <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-stone-100 space-y-6">
