@@ -12,7 +12,7 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Define the company name for easy updates across the site
-  const companyName = "Anne Jackson Psychology Practice";
+  const companyName = "Kind Mind Therapy";
 
   const handleNavClick = (item) => {
     setCurrentPage(item);
@@ -36,29 +36,28 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#faf9f6] font-sans text-stone-800">
-      
+
       <nav className="bg-white sticky top-0 z-50 shadow-sm border-b border-stone-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
-            
-            <div 
+
+            <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => handleNavClick('Home')}
             >
               <Leaf className="w-6 h-6 text-emerald-700 flex-shrink-0" strokeWidth={2.5} />
               <span className="text-lg md:text-2xl font-serif text-stone-800">{companyName}</span>
             </div>
-            
+
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item}
                   onClick={() => handleNavClick(item)}
-                  className={`text-sm font-semibold tracking-wide uppercase py-2 transition-colors ${
-                    currentPage === item 
-                      ? 'text-emerald-700 border-b-2 border-emerald-700' 
+                  className={`text-sm font-semibold tracking-wide uppercase py-2 transition-colors ${currentPage === item
+                      ? 'text-emerald-700 border-b-2 border-emerald-700'
                       : 'text-stone-500 hover:text-stone-800 border-b-2 border-transparent'
-                  }`}
+                    }`}
                 >
                   {item}
                 </button>
@@ -66,7 +65,7 @@ export default function App() {
             </div>
 
             <div className="hidden lg:block">
-              <button 
+              <button
                 onClick={() => handleNavClick('Contact')}
                 className="bg-emerald-700 text-white px-6 py-2.5 rounded-full font-medium hover:bg-emerald-800 transition-colors"
               >
@@ -74,7 +73,7 @@ export default function App() {
               </button>
             </div>
 
-            <button 
+            <button
               className="lg:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -95,7 +94,7 @@ export default function App() {
                   {item}
                 </button>
               ))}
-              <button 
+              <button
                 onClick={() => handleNavClick('Contact')}
                 className="w-full mt-4 bg-emerald-700 text-white px-6 py-3 rounded-full font-medium"
               >
@@ -112,7 +111,7 @@ export default function App() {
 
       <footer className="bg-[#242221] text-stone-300 py-16 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
-          
+
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-6 h-6 text-emerald-500 flex-shrink-0" />
@@ -122,13 +121,13 @@ export default function App() {
               A compassionate, non-judgmental space for healing and growth.
             </p>
           </div>
-          
+
           <div>
             <h4 className="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-3">
               {['Home', 'About Anne', 'Therapies', 'FAQs'].map((item) => (
                 <li key={item}>
-                  <button 
+                  <button
                     onClick={() => handleNavClick(item)}
                     className="text-stone-400 hover:text-white transition-colors text-sm"
                   >
@@ -138,13 +137,13 @@ export default function App() {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Patient Info</h4>
             <ul className="space-y-3">
               {['Fees', 'Contact'].map((item) => (
                 <li key={item}>
-                  <button 
+                  <button
                     onClick={() => handleNavClick(item)}
                     className="text-stone-400 hover:text-white transition-colors text-sm"
                   >
@@ -159,17 +158,17 @@ export default function App() {
             <h4 className="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Get in Touch</h4>
             <div className="space-y-3 text-sm text-stone-400">
               <p>Ready to start your journey?</p>
-              <a 
-                href="mailto:anne.th.jacksoncbp@gmail.com" 
+              <a
+                href="mailto:anne.th.jacksoncbp@gmail.com"
                 className="inline-block text-emerald-500 hover:text-emerald-400 transition-colors font-medium break-all"
               >
                 anne.th.jacksoncbp@gmail.com
               </a>
             </div>
           </div>
-          
+
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-stone-800 text-sm text-stone-500 flex flex-col md:flex-row justify-between items-center gap-4">
           <span>© {new Date().getFullYear()} {companyName}. All rights reserved.</span>
         </div>
