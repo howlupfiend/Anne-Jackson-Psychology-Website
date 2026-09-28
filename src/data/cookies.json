@@ -1,0 +1,20 @@
+[
+  {
+    "key": "current_page",
+    "type": "Strictly Necessary",
+    "purpose": "Remembers your current page across browser refreshes so you remain on the same page rather than being redirected to the home screen.",
+    "duration": "1 year"
+  },
+  {
+    "key": "cookie_consent",
+    "type": "Strictly Necessary",
+    "purpose": "Stores your cookie consent choice so you are not asked on every visit.",
+    "duration": "1 year"
+  },
+  {
+    "key": "last_page (local storage)",
+    "type": "Strictly Necessary",
+    "purpose": "Fallback to maintain page navigation state and active tab upon reload.",
+    "duration": "Persistent"
+  }
+]

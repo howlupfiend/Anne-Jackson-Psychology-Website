@@ -10,6 +10,8 @@ import CookiePolicy from './pages/CookiePolicy';
 import Privacy from './pages/Privacy';
 import babcpLogo from './assets/babcp.jpg';
 import CookieBanner from './components/CookieBanner';
+import practiceInfo from './data/practiceInfo.json';
+import navigationData from './data/navigation.json';
 
 // Cookie Helpers
 const setCookie = (name, value, days = 365) => {
@@ -26,7 +28,7 @@ const getCookie = (name) => {
   return matches ? decodeURIComponent(matches[1]) : null;
 };
 
-const navItems = ['Home', 'About Anne', 'Therapies', 'FAQs', 'Fees', 'Contact'];
+const navItems = navigationData.mainNav;
 
 const ALL_VALID_PAGES = [...navItems, 'Cookies', 'Cookie Policy', 'Privacy', 'Privacy & Confidentiality'];
 
@@ -91,7 +93,7 @@ export default function App() {
   });
 
   // Define the company name for easy updates across the site
-  const companyName = "Kind Mind Therapy";
+  const companyName = practiceInfo.practiceName;
 
   // Sync state with URL hash and listen for browser back/forward buttons
   useEffect(() => {
@@ -232,14 +234,14 @@ export default function App() {
               <span className="text-xl font-serif text-white">{companyName}</span>
             </div>
             <p className="text-sm text-stone-400 max-w-xs">
-              A compassionate, non-judgmental space for healing and growth.
+              {practiceInfo.tagline}
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-3">
-              {['Home', 'About Anne', 'Therapies', 'FAQs'].map((item) => (
+              {navigationData.quickLinks.map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => handleNavClick(item)}
@@ -255,12 +257,7 @@ export default function App() {
           <div>
             <h4 className="font-semibold text-white mb-4 uppercase tracking-wider text-sm">Patient Info</h4>
             <ul className="space-y-3">
-              {[
-                { label: 'Fees', page: 'Fees' },
-                { label: 'Contact', page: 'Contact' },
-                { label: 'Privacy & Confidentiality', page: 'Privacy' },
-                { label: 'Cookies', page: 'Cookies' },
-              ].map((item) => (
+              {navigationData.patientInfoLinks.map((item) => (
                 <li key={item.page}>
                   <button
                     onClick={() => handleNavClick(item.page)}
@@ -278,10 +275,10 @@ export default function App() {
             <div className="space-y-3 text-sm text-stone-400 mb-5">
               <p>Ready to start your journey?</p>
               <a
-                href="mailto:anne.th.jacksoncbp@gmail.com"
+                href={`mailto:${practiceInfo.email.toLowerCase()}`}
                 className="inline-block text-emerald-500 hover:text-emerald-400 transition-colors font-medium break-all"
               >
-                anne.th.jacksoncbp@gmail.com
+                {practiceInfo.email.toLowerCase()}
               </a>
             </div>
 
@@ -295,10 +292,10 @@ export default function App() {
                 />
               </div>
               <p className="text-xs text-stone-300 leading-snug">
-                ICO Data Protection Registration Number: <span className="font-mono text-emerald-400 font-medium">CSN8376103</span>
+                ICO Data Protection Registration Number: <span className="font-mono text-emerald-400 font-medium">{practiceInfo.icoRegistration}</span>
               </p>
               <p className="text-xs text-stone-400 italic">
-                {companyName} est. 2026
+                {companyName} est. {practiceInfo.established}
               </p>
             </div>
           </div>

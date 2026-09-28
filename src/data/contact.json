@@ -1,0 +1,17 @@
+{
+  "title": "Get in Touch",
+  "intro": "If you would like to find out more about therapy, you’re welcome to use the form below to get in touch.",
+  "guidance": [
+    "If you’re interested in arranging an **Initial Consultation**, please tell me a little about what you’re experiencing and what you hope therapy might help with. You only need to share what you feel comfortable including at this stage. This information helps me gain an initial understanding of your needs and consider whether my approach may be suitable for you.",
+    "After receiving your message, I’ll contact you to discuss the next steps, arrange an Initial Consultation if appropriate, or answer any questions you may have. I aim to reply to enquiries within two working days."
+  ],
+  "enquiryTypes": [
+    { "value": "Initial Consultation", "label": "Arrange an Initial Consultation" },
+    { "value": "General Enquiry", "label": "General Question / Enquiry" }
+  ],
+  "messages": {
+    "success": "Message sent successfully. I will be in touch soon!",
+    "error": "Oops! There was a problem sending your message.",
+    "networkError": "Something went wrong. Please try again later."
+  }
+}

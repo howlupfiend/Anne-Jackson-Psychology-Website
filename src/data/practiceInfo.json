@@ -1,0 +1,19 @@
+{
+  "practiceName": "Kind Mind Therapy",
+  "subtitle": "Anne Jackson Psychology Practice",
+  "practitioner": "Anne Jackson",
+  "qualification": "BABCP-accredited Cognitive Behavioural Psychotherapist",
+  "location": "Based in Kent | Online therapy for adults",
+  "email": "Anne.TH.JacksonCBP@gmail.com",
+  "responseTime": "within two working days",
+  "icoRegistration": "CSN8376103",
+  "established": "2026",
+  "retentionPeriod": "7 years",
+  "formspreeEndpoint": "https://formspree.io/f/mwlpnqwp",
+  "tagline": "A compassionate, non-judgmental space for healing and growth.",
+  "emergency": {
+    "immediate": "999",
+    "nhsMentalHealth": "111",
+    "disclaimer": "This practice is not an emergency or crisis service. If you or someone else is in immediate danger, please call 999 or go to your nearest A&E. For urgent mental health support, call NHS 111, contact your GP, or reach out to your local mental health service."
+  }
+}

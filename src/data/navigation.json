@@ -1,0 +1,10 @@
+{
+  "mainNav": ["Home", "About Anne", "Therapies", "FAQs", "Fees", "Contact"],
+  "quickLinks": ["Home", "About Anne", "Therapies", "FAQs"],
+  "patientInfoLinks": [
+    { "label": "Fees", "page": "Fees" },
+    { "label": "Contact", "page": "Contact" },
+    { "label": "Privacy & Confidentiality", "page": "Privacy" },
+    { "label": "Cookies", "page": "Cookies" }
+  ]
+}

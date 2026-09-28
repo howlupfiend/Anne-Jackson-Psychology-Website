@@ -1,0 +1,36 @@
+{
+  "pricingTiers": [
+    {
+      "id": "initial-consultation",
+      "title": "Initial Consultation",
+      "duration": "60 minutes",
+      "price": "£40",
+      "isHighlighted": false
+    },
+    {
+      "id": "standard-session",
+      "title": "Standard Session",
+      "duration": "60 minutes",
+      "price": "£80",
+      "isHighlighted": false
+    },
+    {
+      "id": "block-booking",
+      "title": "6 Session Block Booking",
+      "duration": "360 minutes total",
+      "price": "£420",
+      "originalPrice": "£480",
+      "badge": "Save £60",
+      "isHighlighted": true
+    }
+  ],
+  "paymentTerms": [
+    "Payment is due 48 hours before each session.",
+    "Payment methods include bank transfer, secure card payments via Stripe, or other mutually agreed methods."
+  ],
+  "cancellationTerms": [
+    "Please provide more than 48 hours' notice for cancellations.",
+    "The full session fee may be charged for cancellations made with less than 48 hours' notice.",
+    "The cancellation charge reflects the time reserved specifically for you and the inability to offer that appointment to another client."
+  ]
+}

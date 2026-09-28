@@ -1,4 +1,5 @@
 import { Cookie, ShieldCheck, ArrowLeft, Settings } from 'lucide-react';
+import cookiesData from '../data/cookies.json';
 
 export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
   return (
@@ -88,56 +89,24 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-stone-100">
-                  <tr>
-                    <td className="py-3.5 px-4 sm:px-6 font-mono text-xs font-semibold text-emerald-800">
-                      current_page
-                    </td>
-                    <td className="py-3.5 px-4">
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
-                        <ShieldCheck className="w-3 h-3" /> Strictly Necessary
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-4">
-                      Remembers your current page across browser refreshes so you remain on the same page rather than being redirected to the home screen.
-                    </td>
-                    <td className="py-3.5 px-4 text-xs text-stone-500">
-                      1 year
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td className="py-3.5 px-4 sm:px-6 font-mono text-xs font-semibold text-emerald-800">
-                      cookie_consent
-                    </td>
-                    <td className="py-3.5 px-4">
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
-                        <ShieldCheck className="w-3 h-3" /> Strictly Necessary
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-4">
-                      Stores your cookie consent choice so you are not asked on every visit.
-                    </td>
-                    <td className="py-3.5 px-4 text-xs text-stone-500">
-                      1 year
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td className="py-3.5 px-4 sm:px-6 font-mono text-xs font-semibold text-emerald-800">
-                      last_page (local storage)
-                    </td>
-                    <td className="py-3.5 px-4">
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
-                        <ShieldCheck className="w-3 h-3" /> Strictly Necessary
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-4">
-                      Fallback to maintain page navigation state and active tab upon reload.
-                    </td>
-                    <td className="py-3.5 px-4 text-xs text-stone-500">
-                      Persistent
-                    </td>
-                  </tr>
+                  {cookiesData.map((cookie, index) => (
+                    <tr key={index}>
+                      <td className="py-3.5 px-4 sm:px-6 font-mono text-xs font-semibold text-emerald-800">
+                        {cookie.key}
+                      </td>
+                      <td className="py-3.5 px-4">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                          <ShieldCheck className="w-3 h-3" /> {cookie.type}
+                        </span>
+                      </td>
+                      <td className="py-3.5 px-4">
+                        {cookie.purpose}
+                      </td>
+                      <td className="py-3.5 px-4 text-xs text-stone-500 whitespace-nowrap">
+                        {cookie.duration}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

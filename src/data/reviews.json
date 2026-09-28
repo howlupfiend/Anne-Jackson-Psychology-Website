@@ -1,0 +1,78 @@
+[
+  [
+    {
+      "id": 1,
+      "stars": 5,
+      "title": "A safe, compassionate space",
+      "quote": "Anne made me feel completely heard from our very first consultation. Her patience and warmth helped me open up about thoughts I had kept to myself for years.",
+      "author": "CBT Client",
+      "tag": "Anxiety & Panic",
+      "date": "Verified Client"
+    },
+    {
+      "id": 2,
+      "stars": 5,
+      "title": "Specialist eating disorder support",
+      "quote": "Having a therapist who truly understands the complexity of eating difficulties was transformative. The CBT-E strategies gave me practical tools to challenge old habits.",
+      "author": "Adult Client",
+      "tag": "Eating Disorder Recovery",
+      "date": "Verified Client"
+    },
+    {
+      "id": 3,
+      "stars": 5,
+      "title": "Gently challenged to make progress",
+      "quote": "I really valued having someone who was both deeply supportive and willing to appropriately challenge my avoidance. I finally feel back in control of my daily life.",
+      "author": "Anonymous Client",
+      "tag": "Health & Social Anxiety",
+      "date": "Verified Client"
+    },
+    {
+      "id": 4,
+      "stars": 5,
+      "title": "Practical tools that last",
+      "quote": "The skills I learned during therapy have stayed with me long after our sessions finished. I now have the confidence and resilience to handle difficult days.",
+      "author": "Online Therapy Client",
+      "tag": "Depression & Low Mood",
+      "date": "Verified Client"
+    }
+  ],
+  [
+    {
+      "id": 5,
+      "stars": 5,
+      "title": "Online therapy was seamless",
+      "quote": "I was initially unsure about online therapy, but Anne made it feel just as personal and safe as being in the same room. It fit into my working week perfectly.",
+      "author": "Adult Client",
+      "tag": "Online CBT",
+      "date": "Verified Client"
+    },
+    {
+      "id": 6,
+      "stars": 5,
+      "title": "Understanding maintaining cycles",
+      "quote": "Breaking down how my thoughts, physical feelings, and behaviours fed into each other gave me clarity. For the first time, my difficulties finally made sense.",
+      "author": "CBT Client",
+      "tag": "OCD & Intrusive Thoughts",
+      "date": "Verified Client"
+    },
+    {
+      "id": 7,
+      "stars": 5,
+      "title": "Empathetic & professional",
+      "quote": "Anne's specialist NHS background and calm insight shone through. She tailored every single session to what I needed while keeping our recovery goals in focus.",
+      "author": "Client",
+      "tag": "Trauma & Difficult Experiences",
+      "date": "Verified Client"
+    },
+    {
+      "id": 8,
+      "stars": 5,
+      "title": "Lifelong self-compassion",
+      "quote": "Beyond the practical exercises, therapy taught me how to treat myself with kindness instead of harsh criticism. That shift has been truly life-changing.",
+      "author": "Adult Client",
+      "tag": "Self-Esteem & Recovery",
+      "date": "Verified Client"
+    }
+  ]
+]

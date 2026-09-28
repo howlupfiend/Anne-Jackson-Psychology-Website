@@ -1,0 +1,39 @@
+{
+  "sectionTitle": "Reflections from Therapy",
+  "sectionBadge": "What Clients Have Said",
+  "confidentialityNote": "The following is a composite summary of feedback shared by clients about their experience of therapy. It has been written to protect confidentiality and does not identify any individual client.",
+  "cards": [
+    {
+      "id": "eating",
+      "title": "Eating Difficulties",
+      "subtitle": "Specialist CBT Support & Recovery",
+      "badge": "Composite Client Feedback",
+      "initialParagraphs": [
+        "Clients I have worked with for eating difficulties have described **feeling heard, understood and taken seriously**, often after previous experiences where they felt misunderstood or unsure that therapy was right for them.",
+        "Clients have particularly valued having a therapist who understands the complexity of eating disorders and takes time to understand the individual person behind the difficulties. They have described therapy as a safe, compassionate space where they could talk openly, while also being appropriately challenged when this was needed."
+      ],
+      "expandedParagraphs": [
+        "Feedback has highlighted the value of developing a clearer understanding of eating difficulties and the patterns that can keep them going, alongside learning practical strategies to make meaningful changes. Clients have described **becoming more able to approach food, challenge unhelpful behaviours and beliefs, and develop greater confidence and self-compassion**.",
+        "For some, therapy has also helped them understand how eating difficulties can connect with anxiety, self-esteem, trauma and other areas of their lives. Clients have valued being supported to recognise their progress, build on their own strengths and gradually develop the **confidence to continue using the skills they have learned beyond therapy**."
+      ],
+      "highlight": "Above all, clients have described feeling seen, understood and supported, while having the specialist knowledge, encouragement and appropriate challenge to help them work towards meaningful recovery."
+    },
+    {
+      "id": "cbt",
+      "title": "Cognitive Behavioural Therapy (CBT)",
+      "subtitle": "Anxiety, Mood, Trauma & Life Difficulties",
+      "badge": "Composite Client Feedback",
+      "initialParagraphs": [
+        "Clients have described therapy as a place where they have felt **safe, listened to and genuinely understood**. For many, **developing a trusting therapeutic relationship** has been an important part of feeling able to talk openly about difficulties that had become overwhelming or difficult to manage alone.",
+        "Clients have valued an approach that is **compassionate, patient and individualised**, while also providing appropriate challenge when this could help them move forward. Feedback has highlighted the importance of having things explained clearly, exploring difficulties in depth and having therapy adapted to what each person needs."
+      ],
+      "expandedParagraphs": [
+        "Clients have particularly appreciated learning practical CBT strategies to help them understand the connection between their thoughts, feelings and behaviours, recognise patterns that may be maintaining difficulties and approach situations they may previously have avoided. Some have found it helpful to practise these skills between sessions and then reflect together on what they noticed, what they learned and what they might try next.",
+        "For people experiencing anxiety, social anxiety, health anxiety, trauma and low mood, clients have described developing greater confidence in themselves and in their ability to manage difficult thoughts, emotions and situations. They have **valued learning that difficult days and uncomfortable emotions can be part of life without having to take control, while developing strategies to respond differently.**",
+        "Clients have also valued being supported to work through difficult or unresolved experiences, with therapy providing a space to explore how these experiences may continue to affect their thoughts, emotions and everyday life.",
+        "As therapy comes to an end, clients have **described feeling better equipped to use the skills they have developed independently, with greater confidence in their ability to manage future challenges**."
+      ],
+      "highlight": "A recurring theme in the feedback is the experience of feeling understood, supported and appropriately challenged, while developing the knowledge, skills and confidence to make meaningful changes for themselves."
+    }
+  ]
+}

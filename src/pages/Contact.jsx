@@ -1,9 +1,18 @@
 import { useState } from 'react';
+import contactData from '../data/contact.json';
+import practiceInfo from '../data/practiceInfo.json';
+
+const renderFormattedText = (text) => {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  // 1. New state to control the toast notification
   const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
   
   const [name, setName] = useState('');
@@ -13,7 +22,6 @@ export default function Contact() {
 
   const isFormValid = name.trim() !== '' && email.trim() !== '' && message.trim() !== '';
 
-  // 2. Helper function to show the toast and automatically hide it after 4 seconds
   const showToast = (msg, type) => {
     setToast({ show: true, message: msg, type });
     setTimeout(() => {
@@ -26,7 +34,7 @@ export default function Contact() {
     setIsSubmitting(true); 
 
     try {
-      const response = await fetch("https://formspree.io/f/mwlpnqwp", {
+      const response = await fetch(practiceInfo.formspreeEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,51 +43,41 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        // 3. Replaced alert() with showToast()
-        showToast("Message sent successfully. I will be in touch soon!", "success"); 
+        showToast(contactData.messages.success, "success"); 
         setName('');
         setEmail('');
         setPhone('');
         setMessage('');
       } else {
-        showToast("Oops! There was a problem sending your message.", "error");
+        showToast(contactData.messages.error, "error");
       }
     } catch (error) {
-      showToast("Something went wrong. Please try again later.", "error");
+      showToast(contactData.messages.networkError, "error");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative">
       
       {/* Main Header */}
       <div className="text-center mb-8">
-        <h2 className="text-4xl lg:text-5xl font-serif text-[#242221] mb-4">Get in Touch</h2>
+        <h2 className="text-4xl lg:text-5xl font-serif text-[#242221] mb-4">{contactData.title}</h2>
         <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-          If you would like to find out more about therapy, you’re welcome to use the form below to get in touch.
+          {contactData.intro}
         </p>
       </div>
 
       {/* Organized Info Box */}
       <div className="bg-emerald-50/50 p-6 md:p-8 rounded-3xl border border-emerald-100 mb-10 text-stone-700 max-w-3xl mx-auto shadow-sm">
         <div className="space-y-4 text-base md:text-lg">
-          
-          <div className="flex items-start">
-            <span className="text-emerald-600 mr-3 mt-1 text-xl leading-none">•</span>
-            <p>
-              If you’re interested in arranging an <strong>Initial Consultation</strong>, please tell me a little about what you’re experiencing and what you hope therapy might help with. You only need to share what you feel comfortable including at this stage. This information helps me gain an initial understanding of your needs and consider whether my approach may be suitable for you.
-            </p>
-          </div>
-
-          <div className="flex items-start">
-            <span className="text-emerald-600 mr-3 mt-1 text-xl leading-none">•</span>
-            <p>
-              After receiving your message, I’ll contact you to discuss the next steps, arrange an Initial Consultation if appropriate, or answer any questions you may have. I aim to reply to enquiries within two working days.
-            </p>
-          </div>
-
+          {contactData.guidance.map((text, idx) => (
+            <div key={idx} className="flex items-start">
+              <span className="text-emerald-600 mr-3 mt-1 text-xl leading-none">•</span>
+              <p>{renderFormattedText(text)}</p>
+            </div>
+          ))}
         </div>
       </div>
       
@@ -123,7 +121,7 @@ export default function Contact() {
             type="tel" 
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none transition-colors bg-stone-50"
+            className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none transition-colors bg-stone-50" 
           />
         </div>
         
@@ -141,8 +139,9 @@ export default function Contact() {
               className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none bg-stone-50/50 text-stone-700 appearance-none cursor-pointer"
             >
               <option value="" disabled>Please select...</option>
-              <option value="Initial Consultation">Arrange an Initial Consultation</option>
-              <option value="General Enquiry">General Question / Enquiry</option>
+              {contactData.enquiryTypes.map((type) => (
+                <option key={type.value} value={type.value}>{type.label}</option>
+              ))}
             </select>
             {/* Custom dropdown arrow to make it look modern */}
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-stone-500">
@@ -176,7 +175,7 @@ export default function Contact() {
         </button>
       </form>
 
-      {/* 4. The Toast UI */}
+      {/* The Toast UI */}
       <div 
         className={`fixed bottom-8 right-8 z-50 transition-all duration-500 ease-in-out transform ${
           toast.show ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0 pointer-events-none'
