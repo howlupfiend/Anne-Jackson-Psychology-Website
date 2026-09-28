@@ -4,9 +4,6 @@ export default function Fees({ navigate }) {
       
       {/* Header Section */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <p className="text-emerald-700 font-semibold tracking-wider text-sm mb-4 uppercase">
-          Investment in your wellbeing
-        </p>
         <h2 className="text-4xl lg:text-5xl font-serif text-[#242221] mb-6">
           Session Fees
         </h2>
@@ -67,11 +64,15 @@ export default function Fees({ navigate }) {
             <ul className="space-y-4 text-stone-600">
               <li className="flex items-start">
                 <span className="text-emerald-500 mr-3 mt-1">•</span>
-                Payment is due 48 hours before each session.
+                <span>
+                  Payment is due{' '}<strong>48 hours before</strong>{' '}each session.
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-emerald-500 mr-3 mt-1">•</span>
-                Payment methods include bank transfer, secure card payments via Stripe, or other mutually agreed methods.
+                <span>
+                  Payment methods include bank transfer, secure card payments via Stripe, or other mutually agreed methods.
+                </span>
               </li>
             </ul>
           </div>
@@ -82,22 +83,27 @@ export default function Fees({ navigate }) {
             <ul className="space-y-4 text-stone-600">
               <li className="flex items-start">
                 <span className="text-emerald-500 mr-3 mt-1">•</span>
-                Please provide more than 48 hours' notice for cancellations.
+                <span>
+                  Please provide{' '}<strong>more than 48 hours'</strong>{' '}notice for cancellations.
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-emerald-500 mr-3 mt-1">•</span>
-                The full session fee may be charged for cancellations made with less than 48 hours' notice.
+                <span>
+                  The full session fee may be charged for cancellations made with less than 48 hours' notice.
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-emerald-500 mr-3 mt-1">•</span>
-                The cancellation charge reflects the time reserved specifically for you and the inability to offer that appointment to another client.
+                <span>
+                  The cancellation charge reflects the time reserved specifically for you and the inability to offer that appointment to another client.
+                </span>
               </li>
             </ul>
           </div>
-
+          
         </div>
       </div>
-
       {/* Call to Action */}
       <div className="mt-16 text-center">
         <p className="text-stone-600 mb-6">
