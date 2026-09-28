@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70" fill="none">
+  <!-- BABCP Accredited Practitioner Vector Badge -->
+  <rect width="240" height="70" rx="10" fill="#003366"/>
+  <rect x="1" y="1" width="238" height="68" rx="9" stroke="#004080" stroke-width="1.5"/>
+  
+  <!-- BABCP Bold Acronym -->
+  <text x="18" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" letter-spacing="1.5">
+    BABCP
+  </text>
+  
+  <!-- Accredited Tag -->
+  <g transform="translate(18, 44)">
+    <rect width="78" height="15" rx="3" fill="#059669"/>
+    <text x="39" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="9" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.8">
+      ACCREDITED
+    </text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="108" y1="12" x2="108" y2="58" stroke="#336699" stroke-width="1.5"/>
+
+  <!-- Subtitle Text -->
+  <text x="118" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="9.5" fill="#E2E8F0">
+    British Association for
+  </text>
+  <text x="118" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="9.5" fill="#E2E8F0">
+    Behavioural &amp; Cognitive
+  </text>
+  <text x="118" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="9.5" fill="#E2E8F0">
+    Psychotherapies
+  </text>
+</svg>

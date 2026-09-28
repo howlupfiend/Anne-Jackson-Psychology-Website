@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70" fill="none">
+  <!-- ICO Information Commissioner's Office Badge -->
+  <rect width="240" height="70" rx="10" fill="#182333"/>
+  <rect x="1" y="1" width="238" height="68" rx="9" stroke="#2B394E" stroke-width="1.5"/>
+  
+  <!-- ICO Emblem -->
+  <g transform="translate(16, 14)">
+    <rect width="42" height="42" rx="7" fill="#0E1622"/>
+    <text x="7" y="29" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="-0.5">
+      ico<tspan fill="#38BDF8">.</tspan>
+    </text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="70" y1="14" x2="70" y2="56" stroke="#2B394E" stroke-width="1.5"/>
+
+  <!-- Subtitle Text -->
+  <text x="80" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="10.5" fill="#FFFFFF">
+    Information Commissioner&rsquo;s
+  </text>
+  <text x="80" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="10.5" fill="#FFFFFF">
+    Office
+  </text>
+  <text x="80" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="9" fill="#94A3B8">
+    Registered: CSN8376103
+  </text>
+</svg>
