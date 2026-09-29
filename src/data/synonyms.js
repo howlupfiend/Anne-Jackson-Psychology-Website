@@ -9,10 +9,10 @@ export const SYNONYM_GROUPS = [
   ['gp', 'doctor', "doctor's", 'doctors', 'general practitioner', 'gp surgery', 'local surgery', 'surgery', 'doctor surgery', 'medical practice', 'health centre', 'gp contact'],
   ['privacy', 'confidential', 'confidentiality', 'gdpr', 'records', 'notes', 'private', 'data protection'],
   ['crisis', 'emergency', 'urgent', 'danger', 'harm', '999', '111', 'suicide', 'a&e', 'hospital', 'crisis support'],
-  ['eating disorder', 'eating disorders', 'anorexia', 'bulimia', 'binge eating', 'arfid', 'cbt-e', 'food', 'body image', 'diet'],
+  ['eating disorder', 'eating disorders', 'anorexia', 'bulimia', 'binge eating', 'arfid', 'cbt-e', 'cbt-ar', 'food', 'body image', 'diet'],
   ['nervous', 'anxious', 'anxiety', 'worried', 'worry', 'scared', 'fear', 'panic', 'phobia', 'phobias', 'social anxiety', 'health anxiety', 'ocd', 'obsessive compulsive'],
-  ['cbt', 'cognitive behavioural therapy', 'cognitive behavioral', 'cbt-e', 'cbt-t', 'cbt-20-an'],
-  ['duration', 'length', 'how long', 'number of sessions', 'how many sessions', 'frequency', 'how often', 'weekly', 'fortnightly'],
+  ['cbt', 'cognitive behavioural therapy', 'cognitive behavioral', 'cbt-e', 'cbt-ar', 'cbt-t', 'cbt-20-an'],
+  ['duration', 'length', 'how long', 'number of sessions', 'how many sessions', 'frequency', 'how often', 'weekly', 'fortnightly', '60 minutes', 'session length'],
   ['diagnosis', 'diagnose', 'diagnosed', 'formal diagnosis', 'referral', 'doctor referral', 'gp referral'],
 ];
 

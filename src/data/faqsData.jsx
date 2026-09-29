@@ -138,15 +138,15 @@ export const getFaqs = (navigate) => [
     id: 'eating-disorders',
     category: 'CBT & Approaches',
     q: 'What eating disorders do you work with?',
-    keywords: ['anorexia nervosa', 'bulimia nervosa', 'binge eating', 'arfid', 'avoidant restrictive', 'cbt-e', 'cbt-t', 'cbt-20-an', 'food', 'body image'],
-    plainText: 'I have specialist training and experience working with Anorexia Nervosa, Bulimia Nervosa, Binge Eating Disorder and Avoidant Restrictive Food Intake Disorder (ARFID). My main treatment approach for eating disorders is Enhanced Cognitive Behavioural Therapy (CBT-E). Depending on your individual needs, I may also draw on other evidence-informed CBT approaches, including CBT-T and CBT-20-AN.',
+    keywords: ['anorexia nervosa', 'bulimia nervosa', 'binge eating', 'arfid', 'avoidant restrictive', 'cbt-e', 'cbt-ar', 'cbt-t', 'cbt-20-an', 'food', 'body image'],
+    plainText: 'I have specialist training and experience working with Anorexia Nervosa, Bulimia Nervosa, Binge Eating Disorder and Avoidant Restrictive Food Intake Disorder (ARFID). My main treatment approach for eating disorders is Enhanced Cognitive Behavioural Therapy (CBT-E) and Cognitive Behavioural Therapy for ARFID (CBT-AR). Depending on your individual needs, I may also draw on other evidence-informed CBT approaches, including CBT-T and CBT-20-AN.',
     a: (
       <div className="space-y-3">
         <p>
           I have specialist training and experience working with <strong>Anorexia Nervosa</strong>, <strong>Bulimia Nervosa</strong>, <strong>Binge Eating Disorder</strong> and <strong>Avoidant Restrictive Food Intake Disorder (ARFID)</strong>.
         </p>
         <p>
-          My main treatment approach for eating disorders is Enhanced Cognitive Behavioural Therapy (CBT-E). Depending on your individual needs, I may also draw on other evidence-informed CBT approaches, including CBT-T and CBT-20-AN.
+          My main treatment approach for eating disorders is <strong>Enhanced Cognitive Behavioural Therapy (CBT-E)</strong> and <strong>Cognitive Behavioural Therapy for ARFID (CBT-AR)</strong>. Depending on your individual needs, I may also draw on other evidence-informed CBT approaches, including CBT-T and CBT-20-AN.
         </p>
       </div>
     )
@@ -189,12 +189,15 @@ export const getFaqs = (navigate) => [
     id: 'session-frequency',
     category: 'Online & Practical',
     q: 'How often will I have sessions?',
-    keywords: ['frequency', 'weekly', 'fortnightly', 'how often', 'appointments', 'regular'],
-    plainText: 'This will depend on your individual circumstances and the type of therapy we agree is appropriate. We will discuss the recommended frequency during your assessment and review this as therapy progresses.',
+    keywords: ['frequency', 'weekly', 'fortnightly', 'how often', 'appointments', 'regular', 'session length', '60 minutes'],
+    plainText: 'Session length is 60 minutes and frequency is usually weekly. This will also depend on your individual circumstances and the type of therapy we agree is appropriate. We will discuss the recommended frequency during your assessment and review this as therapy progresses.',
     a: (
       <div className="space-y-3">
         <p>
-          This will depend on your individual circumstances and the type of therapy we agree is appropriate. We will discuss the recommended frequency during your assessment and review this as therapy progresses.
+          Session length is 60 minutes and frequency is usually weekly.
+        </p>
+        <p>
+          This will also depend on your individual circumstances and the type of therapy we agree is appropriate. We will discuss the recommended frequency during your assessment and review this as therapy progresses.
         </p>
       </div>
     )
@@ -228,7 +231,7 @@ export const getFaqs = (navigate) => [
     a: (
       <div className="space-y-3">
         <p>
-          At the moment, I offer online therapy only, which many people find provides a flexible, comfortable and private way to access support. Therapy can be just as effective online, and I aim to create the same warm, safe and collaborative space that you would experience in person.
+          At the moment, I offer <strong>online therapy only</strong>, which many people find provides a flexible, comfortable and private way to access support. Therapy can be just as effective online, and I aim to create the same warm, safe and collaborative space that you would experience in person.
         </p>
         <p>
           I understand that some people prefer face-to-face appointments, and this is something I may offer in the future. If in-person sessions become available, I will share further information on my website.
@@ -258,7 +261,7 @@ export const getFaqs = (navigate) => [
           >
             Privacy &amp; Confidentiality Policy
           </button>
-          , Privacy Notice, and Therapy Agreement.
+          , <strong>Privacy Notice, and Therapy Agreement</strong>.
         </p>
       </div>
     )
@@ -296,7 +299,7 @@ export const getFaqs = (navigate) => [
           >
             Fees Page
           </button>{' '}
-          and my Therapy Agreement, including applicable cancellation fee and any notice period.
+          <strong>and my Therapy Agreement</strong>, including applicable cancellation fee and any notice period.
         </p>
         <p>
           I’ll always encourage you to contact me as soon as possible if you cannot attend an appointment.
@@ -320,10 +323,10 @@ export const getFaqs = (navigate) => [
           >
             Fees Page
           </button>{' '}
-          and are also outlined in the Therapy Agreement.
+          and are also outlined in the <strong>Therapy Agreement</strong>.
         </p>
         <p>
-          Payment can be made securely online using Stripe or by bank transfer.
+          Payment can be made securely online using <strong>Stripe or by bank transfer</strong>.
         </p>
       </div>
     )
@@ -382,7 +385,7 @@ export const getFaqs = (navigate) => [
             NHS Urgent Mental Health Support
           </p>
           <p>
-            If you need urgent mental health support, you can contact <strong>NHS 111</strong> and select the mental health option.
+            If you need urgent mental health support, you can contact <strong>NHS 111 and select the mental health option</strong>.
           </p>
         </div>
         <p className="text-stone-700">
@@ -395,15 +398,18 @@ export const getFaqs = (navigate) => [
     id: 'preparation-first-session',
     category: 'Starting Therapy',
     q: 'Do I need to prepare anything before my first appointment?',
-    keywords: ['preparation', 'prepare', 'forms', 'therapy agreement', 'privacy notice', 'paperwork'],
-    plainText: 'No special preparation is required. Before therapy begins, I will provide the relevant information and forms, including your Therapy Agreement and Privacy Notice. You can simply come as you are. During the Initial Consultation, we’ll take time to understand what has brought you to therapy and what you would like support with.',
+    keywords: ['preparation', 'prepare', 'forms', 'therapy agreement', 'privacy notice', 'paperwork', 'initial consultation form', 'background'],
+    plainText: 'Where an Initial Consultation is booked, I will send a secure Initial Consultation form to complete before your appointment. This gives me a little background about you, what has brought you to therapy, and what you would like help with. It helps us make the most of our first session. You can answer as much as you feel comfortable with, be as brief or detailed with your answers, and we will always talk through anything together in our session. Before therapy begins, I will provide the relevant information and forms, including your Therapy Agreement and Privacy Notice. You can choose to simply come as you are. During the Initial Consultation, we’ll take time to understand what has brought you to therapy and what you would like support with.',
     a: (
       <div className="space-y-3">
         <p>
-          No special preparation is required. Before therapy begins, I will provide the relevant information and forms, including your Therapy Agreement and Privacy Notice.
+          <strong>Where an Initial Consultation is booked</strong>, I will send <strong>a secure Initial Consultation form</strong> to complete before your appointment. This gives me a little background about you, what has brought you to therapy, and what you would like help with. <strong>It helps us make the most of our first session</strong>. You can answer as much as you feel comfortable with, be as brief or detailed with your answers, and we will always talk through anything together in our session.
         </p>
         <p>
-          You can simply come as you are. During the Initial Consultation, we’ll take time to understand what has brought you to therapy and what you would like support with.
+          <strong>Before therapy begins</strong>, I will provide the relevant information and forms, including your <strong>Therapy Agreement and Privacy Notice</strong>.
+        </p>
+        <p>
+          You can choose to simply come as you are. During the Initial Consultation, we’ll take time to understand what has brought you to therapy and what you would like support with.
         </p>
       </div>
     )

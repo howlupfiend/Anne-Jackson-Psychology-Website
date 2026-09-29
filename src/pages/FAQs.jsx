@@ -266,7 +266,7 @@ export default function FAQs({ navigate }) {
           Have a question that isn&rsquo;t answered here?
         </h3>
         <p className="text-stone-600 text-base max-w-xl mx-auto mb-6">
-          Choosing therapy is an important step. If you have any further questions or would like to discuss whether my approach is right for you, I would be delighted to hear from you.
+          Choosing therapy is an important step. If you have any further questions or would like to discuss whether my approach is right for you, please do get in touch.
         </p>
         <button
           onClick={() => navigate && navigate('Contact')}
