@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
-import { Leaf, AlertCircle, Quote, Star, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { AlertCircle, Quote, Star, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Bluebell } from '../components/Bluebell';
 import homephoto from '../assets/bluebell-field.jpeg'; // Ensure this matches your filename
 import reviewPages from '../data/reviews.json';
 import reflectionsData from '../data/reflections.json';
@@ -89,7 +90,7 @@ export default function Home({ navigate }) {
           <div className="max-w-2xl bg-white/85 backdrop-blur-md p-6 sm:p-10 rounded-3xl md:bg-transparent md:backdrop-blur-none md:p-0 shadow-lg shadow-black/5 md:shadow-none">
 
             <div className="flex items-center gap-2 mb-6">
-              <Leaf className="w-5 h-5 text-emerald-600" strokeWidth={2.5} />
+              <Bluebell className="w-5 h-5 text-blue-600" strokeWidth={2.3} />
               <p className="text-emerald-700 font-semibold tracking-wider text-sm uppercase mt-1">
                 {practiceInfo.location}
               </p>

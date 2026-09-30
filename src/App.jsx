@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { Bluebell } from './components/Bluebell';
 import Home from './pages/Home';
 import About from './pages/About';
 import Therapies from './pages/Therapies';
@@ -177,7 +178,7 @@ export default function App() {
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => handleNavClick('Home')}
             >
-              <Leaf className="w-6 h-6 text-emerald-700 flex-shrink-0" strokeWidth={2.5} />
+              <Bluebell className="w-6 h-6 text-blue-600 flex-shrink-0" strokeWidth={2.3} />
               <span className="text-lg md:text-2xl font-serif text-stone-800">{companyName}</span>
             </div>
 
@@ -230,7 +231,7 @@ export default function App() {
 
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <Leaf className="w-6 h-6 text-emerald-500 flex-shrink-0" />
+              <Bluebell className="w-6 h-6 text-blue-400 flex-shrink-0" strokeWidth={2.2} />
               <span className="text-xl font-serif text-white">{companyName}</span>
             </div>
             <p className="text-sm text-stone-400 max-w-xs">
