@@ -96,7 +96,7 @@ export default function Home({ navigate }) {
             </div>
 
             <h1 className="text-5xl lg:text-[4rem] font-serif text-[#242221] mb-6 leading-[1.1]">
-              Evidence-based therapy, tailored to you.
+              Evidence based therapy, fit for your unique story.
             </h1>
 
             <p className="text-lg text-stone-800 font-medium mb-8 leading-relaxed max-w-lg">
