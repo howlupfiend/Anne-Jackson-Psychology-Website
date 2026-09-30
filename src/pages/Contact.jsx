@@ -18,7 +18,9 @@ export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [inquiryType, setInquiryType] = useState('Initial Consultation');
   const [message, setMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
   const isFormValid = name.trim() !== '' && email.trim() !== '' && message.trim() !== '';
 
@@ -34,22 +36,28 @@ export default function Contact() {
     setIsSubmitting(true); 
 
     try {
-      const response = await fetch(practiceInfo.formspreeEndpoint, {
+      const endpoint = practiceInfo.contactEndpoint || '/contact.php';
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
-        body: JSON.stringify({ name, email, phone, message }),
+        body: JSON.stringify({ name, email, phone, inquiryType, message, honeypot }),
       });
 
-      if (response.ok) {
-        showToast(contactData.messages.success, "success"); 
+      const result = await response.json().catch(() => null);
+
+      if (response.ok && (!result || result.success !== false)) {
+        showToast(result?.message || contactData.messages.success, "success"); 
         setName('');
         setEmail('');
         setPhone('');
+        setInquiryType('Initial Consultation');
         setMessage('');
+        setHoneypot('');
       } else {
-        showToast(contactData.messages.error, "error");
+        showToast(result?.error || contactData.messages.error, "error");
       }
     } catch (error) {
       showToast(contactData.messages.networkError, "error");
@@ -135,10 +143,10 @@ export default function Contact() {
               id="inquiryType"
               name="inquiryType"
               required
-              defaultValue=""
+              value={inquiryType}
+              onChange={(e) => setInquiryType(e.target.value)}
               className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none bg-stone-50/50 text-stone-700 appearance-none cursor-pointer"
             >
-              <option value="" disabled>Please select...</option>
               {contactData.enquiryTypes.map((type) => (
                 <option key={type.value} value={type.value}>{type.label}</option>
               ))}
@@ -164,6 +172,20 @@ export default function Contact() {
             className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none transition-colors bg-stone-50 resize-y" 
             placeholder="Please share a brief overview of what brings you to therapy..."
           ></textarea>
+        </div>
+
+        {/* Anti-spam Honeypot field (hidden from real visitors) */}
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="website">Leave this field blank</label>
+          <input 
+            type="text" 
+            id="website" 
+            name="website" 
+            tabIndex={-1} 
+            autoComplete="off" 
+            value={honeypot} 
+            onChange={(e) => setHoneypot(e.target.value)} 
+          />
         </div>
         
         <button 

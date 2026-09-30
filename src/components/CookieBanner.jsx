@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Cookie, ShieldCheck, ChevronDown, ChevronUp, X } from 'lucide-react';
+import practiceInfo from '../data/practiceInfo.json';
 
 export default function CookieBanner({ isOpen, onAcceptAll, onEssentialOnly, onClose, onViewPolicy }) {
   const [showDetails, setShowDetails] = useState(false);
@@ -21,7 +22,7 @@ export default function CookieBanner({ isOpen, onAcceptAll, onEssentialOnly, onC
                 Cookie Preferences
               </h3>
               <p className="text-xs text-stone-500 font-medium">
-                Kind Mind Therapy
+                {practiceInfo.practiceName}
               </p>
             </div>
           </div>

@@ -229,13 +229,19 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
 
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-3">
               <Leaf className="w-6 h-6 text-emerald-500 flex-shrink-0" />
               <span className="text-xl font-serif text-white">{companyName}</span>
             </div>
             <p className="text-sm text-stone-400 max-w-xs">
               {practiceInfo.tagline}
             </p>
+
+            <div className="mt-5 space-y-0.5 text-sm">
+              <p className="font-semibold text-white text-base">Anne TH Jackson</p>
+              <p className="text-stone-300">Cognitive Behavioural Psychotherapist</p>
+              <p className="text-emerald-400 font-medium">BABCP Accredited</p>
+            </div>
           </div>
 
           <div>
@@ -283,13 +289,19 @@ export default function App() {
             </div>
 
             {/* Professional Accreditation & Registration */}
-            <div className="pt-4 border-t border-stone-800 space-y-2">
-              <div className="bg-white p-1 rounded-lg shadow-xs inline-block">
-                <img
-                  src={babcpLogo}
-                  alt="BABCP Accredited"
-                  className="h-11 w-11 object-contain rounded"
-                />
+            <div className="pt-4 border-t border-stone-800 space-y-2.5">
+              <div className="flex items-center gap-3">
+                <div className="bg-white p-1 rounded-lg shadow-xs inline-block flex-shrink-0">
+                  <img
+                    src={babcpLogo}
+                    alt="BABCP Accredited"
+                    className="h-11 w-11 object-contain rounded"
+                  />
+                </div>
+                <div className="text-xs">
+                  <span className="text-stone-200 font-semibold block">BABCP Accredited</span>
+                  <span className="text-stone-400 block">Cognitive Behavioural Psychotherapist</span>
+                </div>
               </div>
               <p className="text-xs text-stone-300 leading-snug">
                 ICO Data Protection Registration Number: <span className="font-mono text-emerald-400 font-medium">{practiceInfo.icoRegistration}</span>

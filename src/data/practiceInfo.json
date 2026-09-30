@@ -1,7 +1,7 @@
 {
-  "practiceName": "Kind Mind Therapy",
-  "subtitle": "Anne Jackson Psychology Practice",
-  "practitioner": "Anne Jackson",
+  "practiceName": "Anne TH Jackson Psychotherapy",
+  "subtitle": "Anne TH Jackson Psychotherapy",
+  "practitioner": "Anne TH Jackson",
   "qualification": "BABCP-accredited Cognitive Behavioural Psychotherapist",
   "location": "Based in Kent | Online therapy for adults",
   "email": "Anne.TH.JacksonCBP@gmail.com",
@@ -9,7 +9,7 @@
   "icoRegistration": "CSN8376103",
   "established": "2026",
   "retentionPeriod": "7 years",
-  "formspreeEndpoint": "https://formspree.io/f/mwlpnqwp",
+  "contactEndpoint": "/contact.php",
   "tagline": "A compassionate, non-judgmental space for healing and growth.",
   "emergency": {
     "immediate": "999",

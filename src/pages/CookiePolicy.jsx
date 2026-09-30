@@ -1,5 +1,6 @@
 import { Cookie, ShieldCheck, ArrowLeft, Settings } from 'lucide-react';
 import cookiesData from '../data/cookies.json';
+import practiceInfo from '../data/practiceInfo.json';
 
 export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
   return (
@@ -172,16 +173,16 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
             If you have any questions about this Cookies statement, please feel free to get in touch:
           </p>
           <div className="text-sm text-stone-700 space-y-1">
-            <p className="font-semibold text-stone-900">Kind Mind Therapy</p>
-            <p>Anne Jackson &ndash; Cognitive Behavioural Psychotherapist</p>
-            <p>Based in Kent | Online therapy for adults</p>
+            <p className="font-semibold text-stone-900">{practiceInfo.practiceName}</p>
+            <p>{practiceInfo.practitioner} &ndash; {practiceInfo.qualification}</p>
+            <p>{practiceInfo.location}</p>
             <p>
               Email:{' '}
               <a
-                href="mailto:anne.th.jacksoncbp@gmail.com"
+                href={`mailto:${practiceInfo.email.toLowerCase()}`}
                 className="text-emerald-700 font-medium hover:underline"
               >
-                anne.th.jacksoncbp@gmail.com
+                {practiceInfo.email.toLowerCase()}
               </a>
             </p>
           </div>
