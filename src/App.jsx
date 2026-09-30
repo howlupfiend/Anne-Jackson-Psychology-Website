@@ -188,7 +188,7 @@ export default function App() {
                   key={item}
                   onClick={() => handleNavClick(item)}
                   className={`text-sm font-semibold tracking-wide uppercase py-2 transition-colors cursor-pointer ${currentPage === item
-                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    ? 'text-emerald-700 border-b-2 border-emerald-700'
                     : 'text-stone-500 hover:text-stone-800 border-b-2 border-transparent'
                     }`}
                 >
@@ -212,7 +212,7 @@ export default function App() {
                 <button
                   key={item}
                   onClick={() => handleNavClick(item)}
-                  className="block w-full text-left px-3 py-3 text-base font-medium text-stone-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-md cursor-pointer"
+                  className="block w-full text-left px-3 py-3 text-base font-medium text-stone-600 hover:text-emerald-700 hover:bg-stone-50 rounded-md cursor-pointer"
                 >
                   {item}
                 </button>

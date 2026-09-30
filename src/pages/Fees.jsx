@@ -23,12 +23,12 @@ export default function Fees({ navigate }) {
             key={tier.id}
             className={`p-8 rounded-3xl shadow-sm border flex flex-col justify-between relative ${
               tier.isHighlighted
-                ? 'bg-gradient-to-br from-blue-50/70 to-blue-100/30 border-blue-200'
+                ? 'bg-emerald-50 border-emerald-100'
                 : 'bg-white border-stone-100'
             }`}
           >
             {tier.badge && (
-              <div className="absolute -top-3 -right-2 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full shadow-sm">
+              <div className="absolute -top-3 -right-2 bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full shadow-sm">
                 {tier.badge}
               </div>
             )}
@@ -40,15 +40,13 @@ export default function Fees({ navigate }) {
               {tier.originalPrice && (
                 <div className="text-stone-400 line-through text-lg mb-1">{tier.originalPrice}</div>
               )}
-              <span className={`text-4xl font-serif ${tier.isHighlighted ? 'text-blue-700' : 'text-stone-800'}`}>
-                {tier.price}
-              </span>
+              <span className="text-4xl font-serif text-emerald-700">{tier.price}</span>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Policies Section - Kept with calm green accents */}
+      {/* Policies Section */}
       <div className="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden">
         <div className="grid md:grid-cols-2">
           
@@ -58,7 +56,7 @@ export default function Fees({ navigate }) {
             <ul className="space-y-4 text-stone-600">
               {paymentTerms.map((term, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-emerald-600 mr-3 mt-1">•</span>
+                  <span className="text-emerald-500 mr-3 mt-1">•</span>
                   <span>{term}</span>
                 </li>
               ))}
@@ -71,7 +69,7 @@ export default function Fees({ navigate }) {
             <ul className="space-y-4 text-stone-600">
               {cancellationTerms.map((term, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-emerald-600 mr-3 mt-1">•</span>
+                  <span className="text-emerald-500 mr-3 mt-1">•</span>
                   <span>{term}</span>
                 </li>
               ))}
@@ -88,7 +86,7 @@ export default function Fees({ navigate }) {
         </p>
         <button 
           onClick={() => navigate('Contact')}
-          className="bg-blue-600 text-white px-8 py-3.5 rounded-full font-medium hover:bg-blue-700 transition-colors shadow-sm cursor-pointer"
+          className="bg-emerald-700 text-white px-8 py-3.5 rounded-full font-medium hover:bg-emerald-800 transition-colors cursor-pointer"
         >
           Book an Initial Consultation
         </button>

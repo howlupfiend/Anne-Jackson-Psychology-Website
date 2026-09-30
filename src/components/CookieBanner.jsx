@@ -14,7 +14,7 @@ export default function CookieBanner({ isOpen, onAcceptAll, onEssentialOnly, onC
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+            <div className="w-9 h-9 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
               <Cookie className="w-5 h-5" />
             </div>
             <div>
@@ -81,7 +81,7 @@ export default function CookieBanner({ isOpen, onAcceptAll, onEssentialOnly, onC
           <button
             type="button"
             onClick={() => setShowDetails(!showDetails)}
-            className="font-medium text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 cursor-pointer transition-colors"
+            className="font-medium text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1 cursor-pointer transition-colors"
           >
             <span>{showDetails ? 'Hide cookie details' : 'Customise / View details'}</span>
             {showDetails ? (
@@ -98,7 +98,7 @@ export default function CookieBanner({ isOpen, onAcceptAll, onEssentialOnly, onC
                 onViewPolicy();
                 onClose();
               }}
-              className="text-stone-500 hover:text-blue-600 underline underline-offset-2 transition-colors cursor-pointer"
+              className="text-stone-500 hover:text-emerald-700 underline underline-offset-2 transition-colors cursor-pointer"
             >
               Cookies statement &rarr;
             </button>
@@ -110,7 +110,7 @@ export default function CookieBanner({ isOpen, onAcceptAll, onEssentialOnly, onC
           <button
             type="button"
             onClick={onAcceptAll}
-            className="w-full sm:flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2.5 rounded-full text-xs sm:text-sm transition-colors text-center cursor-pointer shadow-xs"
+            className="w-full sm:flex-1 bg-emerald-700 hover:bg-emerald-800 text-white font-medium px-4 py-2.5 rounded-full text-xs sm:text-sm transition-colors text-center cursor-pointer shadow-xs"
           >
             Accept All
           </button>

@@ -1,6 +1,5 @@
 import annePhoto from '../assets/anne-photo.jpeg';
 import aboutData from '../data/about.json';
-import { Bluebell } from '../components/Bluebell';
 
 export default function About() {
   return (
@@ -10,7 +9,7 @@ export default function About() {
         {/* Image Column (Takes up 5 out of 12 columns on desktop) */}
         <div className="md:col-span-5 lg:col-span-4 md:sticky md:top-24">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-emerald-50/70 rounded-3xl transform translate-x-3 translate-y-3 -z-10"></div>
+            <div className="absolute inset-0 bg-emerald-50 rounded-3xl transform translate-x-3 translate-y-3 -z-10"></div>
             <img
               src={annePhoto}
               alt={aboutData.imageAlt}
@@ -20,11 +19,6 @@ export default function About() {
         </div>
         {/* Text Column (Takes up 7 out of 12 columns on desktop) */}
         <div className="md:col-span-7 lg:col-span-8 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-800 text-xs font-semibold uppercase tracking-wider">
-            <Bluebell className="w-3.5 h-3.5 text-blue-600" strokeWidth={2.3} />
-            <span>BABCP-Accredited Practitioner</span>
-          </div>
-
           <h1 className="text-4xl lg:text-5xl font-serif text-[#242221] mb-8">
             {aboutData.title}
           </h1>

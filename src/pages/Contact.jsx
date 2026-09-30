@@ -78,11 +78,11 @@ export default function Contact() {
       </div>
 
       {/* Organized Info Box */}
-      <div className="bg-blue-50/50 p-6 md:p-8 rounded-3xl border border-blue-100 mb-10 text-stone-700 max-w-3xl mx-auto shadow-sm">
+      <div className="bg-emerald-50/50 p-6 md:p-8 rounded-3xl border border-emerald-100 mb-10 text-stone-700 max-w-3xl mx-auto shadow-sm">
         <div className="space-y-4 text-base md:text-lg">
           {contactData.guidance.map((text, idx) => (
             <div key={idx} className="flex items-start">
-              <span className="text-blue-600 mr-3 mt-1 text-xl leading-none">•</span>
+              <span className="text-emerald-600 mr-3 mt-1 text-xl leading-none">•</span>
               <p>{renderFormattedText(text)}</p>
             </div>
           ))}
@@ -94,28 +94,28 @@ export default function Contact() {
           
           <div>
             <label className="block text-sm font-medium text-stone-700 mb-2">
-              Full name <span className="text-blue-600">*</span>
+              Full name <span className="text-emerald-600">*</span>
             </label>
             <input 
               type="text" 
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none transition-colors bg-stone-50" 
+              className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none transition-colors bg-stone-50" 
               placeholder="Your name" 
             />
           </div>
           
           <div>
             <label className="block text-sm font-medium text-stone-700 mb-2">
-              Email address <span className="text-blue-600">*</span>
+              Email address <span className="text-emerald-600">*</span>
             </label>
             <input 
               type="email" 
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none transition-colors bg-stone-50" 
+              className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none transition-colors bg-stone-50" 
               placeholder="your@email.com" 
             />
           </div>
@@ -129,14 +129,14 @@ export default function Contact() {
             type="tel" 
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none transition-colors bg-stone-50" 
+            className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none transition-colors bg-stone-50" 
           />
         </div>
         
         {/* Type of Enquiry Dropdown */}
         <div>
           <label htmlFor="inquiryType" className="block text-sm font-semibold text-stone-700 mb-2">
-            Type of Enquiry <span className="text-blue-600">*</span>
+            Type of Enquiry <span className="text-emerald-600">*</span>
           </label>
           <div className="relative">
             <select
@@ -145,7 +145,7 @@ export default function Contact() {
               required
               value={inquiryType}
               onChange={(e) => setInquiryType(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-stone-50/50 text-stone-700 appearance-none cursor-pointer"
+              className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none bg-stone-50/50 text-stone-700 appearance-none cursor-pointer"
             >
               {contactData.enquiryTypes.map((type) => (
                 <option key={type.value} value={type.value}>{type.label}</option>
@@ -162,14 +162,14 @@ export default function Contact() {
 
         <div>
           <label className="block text-sm font-medium text-stone-700 mb-2">
-            Message / Reason for therapy <span className="text-blue-600">*</span>
+            Message / Reason for therapy <span className="text-emerald-600">*</span>
           </label>
           <textarea 
             rows="6" 
             required
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none transition-colors bg-stone-50 resize-y" 
+            className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 outline-none transition-colors bg-stone-50 resize-y" 
             placeholder="Please share a brief overview of what brings you to therapy..."
           ></textarea>
         </div>
@@ -191,7 +191,7 @@ export default function Contact() {
         <button 
           type="submit" 
           disabled={isSubmitting || !isFormValid}
-          className="w-full font-medium py-4 px-6 rounded-full transition-colors mt-4 bg-blue-600 text-white hover:bg-blue-700 disabled:bg-stone-300 disabled:text-stone-500 disabled:cursor-not-allowed shadow-sm cursor-pointer"
+          className="w-full font-medium py-4 px-6 rounded-full transition-colors mt-4 bg-emerald-700 text-white hover:bg-emerald-800 disabled:bg-stone-300 disabled:text-stone-500 disabled:cursor-not-allowed"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
