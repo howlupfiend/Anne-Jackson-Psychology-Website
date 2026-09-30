@@ -10,7 +10,7 @@ export default function Privacy({ navigate }) {
       {/* Back button */}
       <button
         onClick={() => navigate('Home')}
-        className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 hover:text-emerald-700 transition-colors mb-8 cursor-pointer group"
+        className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 hover:text-blue-600 transition-colors mb-8 cursor-pointer group"
       >
         <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
         <span>Back to Home</span>
@@ -18,8 +18,8 @@ export default function Privacy({ navigate }) {
 
       {/* Header */}
       <div className="mb-10 pb-8 border-b border-stone-200">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4">
-          <Shield className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4">
+          <Shield className="w-3.5 h-3.5 text-blue-600" />
           <span>{privacyData.badge}</span>
         </div>
 
@@ -33,7 +33,7 @@ export default function Privacy({ navigate }) {
       </div>
 
       {/* Introduction Card */}
-      <div className="bg-emerald-50/50 border border-emerald-200/70 rounded-3xl p-6 sm:p-8 mb-12 shadow-xs space-y-4">
+      <div className="bg-blue-50/50 border border-blue-200/70 rounded-3xl p-6 sm:p-8 mb-12 shadow-xs space-y-4">
         <p className="text-stone-700 text-base sm:text-lg leading-relaxed">
           {privacyData.intro[0]}
         </p>
@@ -48,7 +48,7 @@ export default function Privacy({ navigate }) {
         {/* 1. What information do I collect? */}
         <section>
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="w-8 h-8 rounded-xl bg-emerald-100/60 text-emerald-700 flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-xl bg-blue-100/60 text-blue-700 flex items-center justify-center flex-shrink-0">
               <FileText className="w-4 h-4" />
             </div>
             <h2 className="text-2xl font-serif text-[#242221]">
@@ -62,7 +62,7 @@ export default function Privacy({ navigate }) {
 
           <div className="bg-stone-50 border border-stone-200/80 p-5 rounded-2xl text-sm space-y-2">
             <p className="font-semibold text-stone-800 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-blue-600 flex-shrink-0" />
               {privacyData.collection.specialCategoryTitle}
             </p>
             <p className="text-stone-600">
@@ -92,7 +92,7 @@ export default function Privacy({ navigate }) {
         {/* 3. Confidentiality */}
         <section>
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="w-8 h-8 rounded-xl bg-emerald-100/60 text-emerald-700 flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-xl bg-blue-100/60 text-blue-700 flex items-center justify-center flex-shrink-0">
               <Lock className="w-4 h-4" />
             </div>
             <h2 className="text-2xl font-serif text-[#242221]">
@@ -210,7 +210,7 @@ export default function Privacy({ navigate }) {
                   Email:{' '}
                   <a
                     href={`mailto:${practiceInfo.email}`}
-                    className="text-emerald-700 font-medium hover:underline"
+                    className="text-blue-600 font-medium hover:underline"
                   >
                     {practiceInfo.email}
                   </a>

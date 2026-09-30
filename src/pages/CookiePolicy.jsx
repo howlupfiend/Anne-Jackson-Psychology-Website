@@ -9,7 +9,7 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
       {/* Back button */}
       <button
         onClick={() => navigate('Home')}
-        className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 hover:text-emerald-700 transition-colors mb-8 cursor-pointer group"
+        className="inline-flex items-center gap-2 text-sm font-medium text-stone-500 hover:text-blue-600 transition-colors mb-8 cursor-pointer group"
       >
         <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
         <span>Back to Home</span>
@@ -17,8 +17,8 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
 
       {/* Header */}
       <div className="mb-10 pb-8 border-b border-stone-200">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4">
-          <Cookie className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4">
+          <Cookie className="w-3.5 h-3.5 text-blue-600" />
           <span>Privacy &amp; Transparency</span>
         </div>
         
@@ -92,11 +92,11 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
                 <tbody className="divide-y divide-stone-100">
                   {cookiesData.map((cookie, index) => (
                     <tr key={index}>
-                      <td className="py-3.5 px-4 sm:px-6 font-mono text-xs font-semibold text-emerald-800">
+                      <td className="py-3.5 px-4 sm:px-6 font-mono text-xs font-semibold text-blue-800">
                         {cookie.key}
                       </td>
                       <td className="py-3.5 px-4">
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">
                           <ShieldCheck className="w-3 h-3" /> {cookie.type}
                         </span>
                       </td>
@@ -123,7 +123,7 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
             When you visit my website, you may be given the option to accept or reject non-essential cookies. You can change your preferences at any time using the cookie settings available on the website.
           </p>
 
-          <div className="bg-emerald-50/60 border border-emerald-200/80 rounded-2xl p-5 mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="bg-blue-50/60 border border-blue-200/80 rounded-2xl p-5 mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="font-semibold text-stone-800 text-sm mb-1">
                 Website Cookie Settings
@@ -135,7 +135,7 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
             <button
               type="button"
               onClick={onOpenCookieSettings}
-              className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-medium px-5 py-2.5 rounded-full text-xs sm:text-sm transition-colors cursor-pointer shadow-xs whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-full text-xs sm:text-sm transition-colors cursor-pointer shadow-xs whitespace-nowrap"
             >
               <Settings className="w-4 h-4" />
               <span>Change Cookie Settings</span>
@@ -180,7 +180,7 @@ export default function CookiePolicy({ navigate, onOpenCookieSettings }) {
               Email:{' '}
               <a
                 href={`mailto:${practiceInfo.email.toLowerCase()}`}
-                className="text-emerald-700 font-medium hover:underline"
+                className="text-blue-600 font-medium hover:underline"
               >
                 {practiceInfo.email.toLowerCase()}
               </a>

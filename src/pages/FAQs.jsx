@@ -104,8 +104,8 @@ export default function FAQs({ navigate }) {
 
       {/* Header */}
       <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4">
-          <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4">
+          <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
           <span>Help &amp; Information</span>
         </div>
 
@@ -129,7 +129,7 @@ export default function FAQs({ navigate }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search questions (e.g. fees, costs, online, CBT, crisis)..."
-            className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white border border-stone-200 text-stone-800 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all shadow-xs"
+            className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white border border-stone-200 text-stone-800 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all shadow-xs"
           />
           {searchQuery && (
             <button
@@ -151,8 +151,8 @@ export default function FAQs({ navigate }) {
                 if (searchQuery) setSearchQuery('');
               }}
               className={`text-xs sm:text-sm font-medium px-4 py-2 rounded-full transition-all cursor-pointer ${selectedCategory === category
-                ? 'bg-emerald-700 text-white shadow-xs'
-                : 'bg-white text-stone-600 hover:bg-stone-50 border border-stone-200/80 hover:text-stone-900'
+                ? 'bg-blue-600 text-white shadow-xs'
+                : 'bg-white text-stone-600 hover:bg-blue-50/50 border border-stone-200/80 hover:text-blue-700'
                 }`}
             >
               {category}
@@ -176,14 +176,14 @@ export default function FAQs({ navigate }) {
           <div className="flex items-center gap-3">
             <button
               onClick={expandAll}
-              className="hover:text-emerald-700 transition-colors cursor-pointer"
+              className="hover:text-blue-600 transition-colors cursor-pointer"
             >
               Expand all
             </button>
             <span className="text-stone-300">•</span>
             <button
               onClick={collapseAll}
-              className="hover:text-emerald-700 transition-colors cursor-pointer"
+              className="hover:text-blue-600 transition-colors cursor-pointer"
             >
               Collapse all
             </button>
@@ -204,7 +204,7 @@ export default function FAQs({ navigate }) {
                 setSearchQuery('');
                 setSelectedCategory('All');
               }}
-              className="text-sm font-medium text-emerald-700 hover:underline cursor-pointer"
+              className="text-sm font-medium text-blue-600 hover:underline cursor-pointer"
             >
               Reset search and view all questions
             </button>
@@ -216,7 +216,7 @@ export default function FAQs({ navigate }) {
               <div
                 key={faq.id}
                 className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${isOpen
-                  ? 'border-emerald-200 shadow-sm'
+                  ? 'border-blue-200 shadow-sm'
                   : 'border-stone-200/80 hover:border-stone-300'
                   } ${faq.isCrisis ? 'border-red-200/90' : ''}`}
               >
@@ -226,7 +226,7 @@ export default function FAQs({ navigate }) {
                   aria-expanded={isOpen}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 flex-1">
-                    <span className="font-serif text-lg sm:text-xl font-medium text-[#242221] group-hover:text-emerald-800 transition-colors">
+                    <span className="font-serif text-lg sm:text-xl font-medium text-[#242221] group-hover:text-blue-700 transition-colors">
                       {faq.q}
                     </span>
                     {searchQuery.trim() && (
@@ -236,7 +236,7 @@ export default function FAQs({ navigate }) {
                     )}
                   </div>
 
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${isOpen ? 'bg-emerald-50 text-emerald-700' : 'bg-stone-50 text-stone-400 group-hover:bg-stone-100 group-hover:text-stone-600'
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${isOpen ? 'bg-blue-50 text-blue-600' : 'bg-stone-50 text-stone-400 group-hover:bg-stone-100 group-hover:text-stone-600'
                     }`}>
                     {isOpen ? (
                       <ChevronUp className="w-4 h-4" />
@@ -258,8 +258,8 @@ export default function FAQs({ navigate }) {
       </div>
 
       {/* Still Have Questions CTA Card */}
-      <div className="bg-emerald-50/60 border border-emerald-200/70 rounded-3xl p-8 sm:p-10 text-center max-w-3xl mx-auto shadow-xs">
-        <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto mb-4">
+      <div className="bg-gradient-to-br from-blue-50/70 to-emerald-50/50 border border-blue-200/70 rounded-3xl p-8 sm:p-10 text-center max-w-3xl mx-auto shadow-xs">
+        <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mx-auto mb-4">
           <MessageCircle className="w-6 h-6" />
         </div>
         <h3 className="text-2xl font-serif text-[#242221] mb-3">
@@ -270,7 +270,7 @@ export default function FAQs({ navigate }) {
         </p>
         <button
           onClick={() => navigate && navigate('Contact')}
-          className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-medium px-6 py-3.5 rounded-full text-sm sm:text-base transition-colors cursor-pointer shadow-xs"
+          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3.5 rounded-full text-sm sm:text-base transition-colors cursor-pointer shadow-xs"
         >
           <span>Get in Touch</span>
           <ArrowRight className="w-4 h-4" />

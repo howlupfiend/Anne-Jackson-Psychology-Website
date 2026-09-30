@@ -36,7 +36,7 @@ function TherapyCard({ item, isExpanded, isRowExpanded, onToggle }) {
       <button
         type="button"
         onClick={onToggle}
-        className="mt-6 text-emerald-700 font-semibold hover:text-emerald-800 text-left transition-colors self-start cursor-pointer inline-flex items-center gap-1.5 group"
+        className="mt-6 text-blue-600 font-semibold hover:text-blue-700 text-left transition-colors self-start cursor-pointer inline-flex items-center gap-1.5 group"
         aria-expanded={isExpanded}
       >
         <span>{isExpanded ? 'Show Less' : 'Read More'}</span>
@@ -71,7 +71,7 @@ export default function Therapies({ navigate }) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
 
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <p className="text-emerald-700 font-semibold tracking-wider text-sm mb-4 uppercase">
+        <p className="text-blue-700 font-semibold tracking-wider text-sm mb-4 uppercase">
           Specialist Treatment
         </p>
         <h2 className="text-4xl lg:text-5xl font-serif text-[#242221] mb-6">
@@ -107,7 +107,7 @@ export default function Therapies({ navigate }) {
         </p>
         <button
           onClick={() => navigate('Contact')}
-          className="bg-emerald-700 text-white px-8 py-3.5 rounded-full font-medium hover:bg-emerald-800 transition-colors cursor-pointer"
+          className="bg-blue-600 text-white px-8 py-3.5 rounded-full font-medium hover:bg-blue-700 transition-colors shadow-sm cursor-pointer"
         >
           Book a Consultation
         </button>
