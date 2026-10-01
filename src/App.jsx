@@ -48,12 +48,12 @@ const PAGE_TO_HASH = {
 
 const PAGE_SEO = {
   'Home': {
-    title: 'Anne TH Jackson Psychotherapy | BABCP-Accredited CBT Therapist',
-    description: 'Compassionate, evidence-based online Cognitive Behavioural Therapy (CBT) and eating disorder specialist based in Kent, UK.',
+    title: 'Anne Jackson Psychotherapy | BABCP-Accredited CBT Therapist',
+    description: 'Anne Jackson (Anne TH Jackson) - Compassionate, evidence-based online Cognitive Behavioural Therapy (CBT) and eating disorder specialist based in Kent, UK.',
   },
   'About Anne': {
-    title: 'About Anne TH Jackson | BABCP-Accredited CBT Psychotherapist',
-    description: 'Learn about Anne TH Jackson, BABCP-accredited psychotherapist in Kent offering online therapy across the UK.',
+    title: 'About Anne Jackson | BABCP-Accredited CBT Psychotherapist',
+    description: 'Learn about Anne Jackson (Anne TH Jackson), BABCP-accredited psychotherapist in Kent offering online therapy across the UK.',
   },
   'Therapies': {
     title: 'CBT & Eating Disorder Therapies | Anne TH Jackson Psychotherapy',
