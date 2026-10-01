@@ -1,5 +1,14 @@
 import feesData from '../data/fees.json';
 
+const renderFormattedText = (text) => {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-semibold text-stone-800">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 export default function Fees({ navigate }) {
   const { pricingTiers, paymentTerms, cancellationTerms } = feesData;
 
@@ -57,7 +66,7 @@ export default function Fees({ navigate }) {
               {paymentTerms.map((term, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-emerald-500 mr-3 mt-1">•</span>
-                  <span>{term}</span>
+                  <span>{renderFormattedText(term)}</span>
                 </li>
               ))}
             </ul>
@@ -70,7 +79,7 @@ export default function Fees({ navigate }) {
               {cancellationTerms.map((term, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-emerald-500 mr-3 mt-1">•</span>
-                  <span>{term}</span>
+                  <span>{renderFormattedText(term)}</span>
                 </li>
               ))}
             </ul>
