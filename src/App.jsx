@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Bluebell } from './components/Bluebell';
+import bluebellPhoto from './assets/bluebell.jpg';
 import Home from './pages/Home';
 import About from './pages/About';
 import Therapies from './pages/Therapies';
@@ -225,10 +225,14 @@ export default function App() {
           <div className="flex justify-between items-center h-24">
 
             <div
-              className="flex items-center gap-2 cursor-pointer"
+              className="flex items-center gap-3 cursor-pointer group"
               onClick={() => handleNavClick('Home')}
             >
-              <Bluebell className="w-6 h-6 text-blue-600 flex-shrink-0" strokeWidth={2.3} />
+              <img
+                src={bluebellPhoto}
+                alt="English Bluebell"
+                className="w-9 h-9 md:w-10 md:h-10 object-cover rounded-full shadow-2xs border border-stone-200/70 group-hover:scale-105 transition-transform flex-shrink-0"
+              />
               <span className="text-lg md:text-2xl font-serif text-stone-800">{companyName}</span>
             </div>
 
@@ -280,8 +284,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
 
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-3">
-              <Bluebell className="w-6 h-6 text-blue-400 flex-shrink-0" strokeWidth={2.2} />
+            <div className="flex items-center gap-3 mb-3">
+              <img
+                src={bluebellPhoto}
+                alt="English Bluebell"
+                className="w-8 h-8 object-cover rounded-full bg-white p-0.5 shadow-xs flex-shrink-0"
+              />
               <span className="text-xl font-serif text-white">{companyName}</span>
             </div>
             <p className="text-sm text-stone-400 max-w-xs">

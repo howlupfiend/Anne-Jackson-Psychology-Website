@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { AlertCircle, Quote, Star, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Bluebell } from '../components/Bluebell';
+import bluebellPhoto from '../assets/bluebell.jpg';
 import homephoto from '../assets/bluebell-field.jpeg'; // Ensure this matches your filename
 import reviewPages from '../data/reviews.json';
 import reflectionsData from '../data/reflections.json';
@@ -89,15 +89,19 @@ export default function Home({ navigate }) {
           {/* TEXT CONTAINER with Frosted Glass effect for mobile legibility */}
           <div className="max-w-2xl bg-white/85 backdrop-blur-md p-6 sm:p-10 rounded-3xl md:bg-transparent md:backdrop-blur-none md:p-0 shadow-lg shadow-black/5 md:shadow-none">
 
-            <div className="flex items-center gap-2 mb-6">
-              <Bluebell className="w-5 h-5 text-blue-600" strokeWidth={2.3} />
-              <p className="text-emerald-700 font-semibold tracking-wider text-sm uppercase mt-1">
+            <div className="flex items-center gap-2.5 mb-6">
+              <img
+                src={bluebellPhoto}
+                alt="English Bluebell"
+                className="w-6 h-6 object-cover rounded-full shadow-2xs border border-emerald-100 flex-shrink-0"
+              />
+              <p className="text-emerald-700 font-semibold tracking-wider text-sm uppercase mt-0.5">
                 {practiceInfo.location}
               </p>
             </div>
 
             <h1 className="text-5xl lg:text-[4rem] font-serif text-[#242221] mb-6 leading-[1.1]">
-              Evidence based therapy, fit for your unique story.
+              Evidence-based therapy, fit for your unique story.
             </h1>
 
             <p className="text-lg text-stone-800 font-medium mb-8 leading-relaxed max-w-lg">
@@ -256,129 +260,128 @@ export default function Home({ navigate }) {
         {SHOW_REVIEWS_BANNER && (
           <div className="mb-24">
             <div className="bg-stone-50/70 border border-stone-200/80 rounded-3xl p-6 sm:p-10 shadow-xs">
-            
-            {/* Banner Header: Title, Stars, and Pagination Controls */}
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-              <div>
-                <div className="flex items-center gap-1 text-amber-400 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                  <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full ml-2 border border-emerald-200/60">
-                    5.0 Client Feedback
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-serif text-[#242221]">
-                  Client Experiences &amp; Reviews
-                </h3>
-                <p className="text-sm text-stone-500 mt-1">
-                  Read reflections from individuals supported with CBT, anxiety, and eating difficulties.
-                </p>
-              </div>
 
-              {/* Navigation Controls */}
-              <div className="flex items-center gap-2.5 self-start sm:self-auto">
-                <button
-                  type="button"
-                  onClick={handlePrevReviewPage}
-                  disabled={currentReviewPage === 0}
-                  className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
-                  aria-label="Previous reviews page"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-
-                <div className="text-xs font-semibold text-stone-500 px-1">
-                  Page {currentReviewPage + 1} of {reviewPages.length}
+              {/* Banner Header: Title, Stars, and Pagination Controls */}
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+                <div>
+                  <div className="flex items-center gap-1 text-amber-400 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    ))}
+                    <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full ml-2 border border-emerald-200/60">
+                      5.0 Client Feedback
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-serif text-[#242221]">
+                    Client Experiences &amp; Reviews
+                  </h3>
+                  <p className="text-sm text-stone-500 mt-1">
+                    Read reflections from individuals supported with CBT, anxiety, and eating difficulties.
+                  </p>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={handleNextReviewPage}
-                  disabled={currentReviewPage === reviewPages.length - 1}
-                  className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
-                  aria-label="Next reviews page"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
+                {/* Navigation Controls */}
+                <div className="flex items-center gap-2.5 self-start sm:self-auto">
+                  <button
+                    type="button"
+                    onClick={handlePrevReviewPage}
+                    disabled={currentReviewPage === 0}
+                    className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
+                    aria-label="Previous reviews page"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
 
-            {/* Horizontal Scroll Track */}
-            <div
-              ref={reviewScrollRef}
-              onScroll={handleScrollReviews}
-              className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-6 pb-2"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {reviewPages.map((page, pageIdx) => (
-                <div
-                  key={pageIdx}
-                  className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 snap-start"
-                >
-                  {page.map((review) => (
-                    <div
-                      key={review.id}
-                      className="bg-white rounded-2xl p-6 border border-stone-200/90 shadow-2xs hover:shadow-sm transition-shadow flex flex-col justify-between"
-                    >
-                      <div>
-                        {/* Star Rating and Quote mark */}
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                          <div className="flex items-center gap-0.5 text-amber-400">
-                            {[...Array(review.stars)].map((_, i) => (
-                              <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                            ))}
+                  <div className="text-xs font-semibold text-stone-500 px-1">
+                    Page {currentReviewPage + 1} of {reviewPages.length}
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={handleNextReviewPage}
+                    disabled={currentReviewPage === reviewPages.length - 1}
+                    className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
+                    aria-label="Next reviews page"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Horizontal Scroll Track */}
+              <div
+                ref={reviewScrollRef}
+                onScroll={handleScrollReviews}
+                className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory gap-6 pb-2"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {reviewPages.map((page, pageIdx) => (
+                  <div
+                    key={pageIdx}
+                    className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 snap-start"
+                  >
+                    {page.map((review) => (
+                      <div
+                        key={review.id}
+                        className="bg-white rounded-2xl p-6 border border-stone-200/90 shadow-2xs hover:shadow-sm transition-shadow flex flex-col justify-between"
+                      >
+                        <div>
+                          {/* Star Rating and Quote mark */}
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <div className="flex items-center gap-0.5 text-amber-400">
+                              {[...Array(review.stars)].map((_, i) => (
+                                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                              ))}
+                            </div>
+                            <Quote className="w-4 h-4 text-emerald-600/50 flex-shrink-0" />
                           </div>
-                          <Quote className="w-4 h-4 text-emerald-600/50 flex-shrink-0" />
+
+                          {/* Review Title */}
+                          <h4 className="font-serif text-base font-semibold text-stone-900 mb-2 leading-snug">
+                            {review.title}
+                          </h4>
+
+                          {/* Review Quote Body */}
+                          <p className="text-stone-600 text-xs sm:text-sm leading-relaxed italic mb-4">
+                            &ldquo;{review.quote}&rdquo;
+                          </p>
                         </div>
 
-                        {/* Review Title */}
-                        <h4 className="font-serif text-base font-semibold text-stone-900 mb-2 leading-snug">
-                          {review.title}
-                        </h4>
-
-                        {/* Review Quote Body */}
-                        <p className="text-stone-600 text-xs sm:text-sm leading-relaxed italic mb-4">
-                          &ldquo;{review.quote}&rdquo;
-                        </p>
-                      </div>
-
-                      {/* Review Footer Metadata */}
-                      <div className="pt-3 border-t border-stone-100 flex flex-col gap-1 text-xs">
-                        <div className="flex items-center justify-between">
-                          <span className="font-medium text-stone-800">{review.author}</span>
-                          <span className="text-[10px] text-stone-400 uppercase tracking-wider">{review.date}</span>
+                        {/* Review Footer Metadata */}
+                        <div className="pt-3 border-t border-stone-100 flex flex-col gap-1 text-xs">
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium text-stone-800">{review.author}</span>
+                            <span className="text-[10px] text-stone-400 uppercase tracking-wider">{review.date}</span>
+                          </div>
+                          <span className="inline-block text-[11px] font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md self-start">
+                            {review.tag}
+                          </span>
                         </div>
-                        <span className="inline-block text-[11px] font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md self-start">
-                          {review.tag}
-                        </span>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
 
-            {/* Pagination Indicators */}
-            <div className="flex justify-center items-center gap-2 mt-6 pt-2">
-              {reviewPages.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => scrollToReviewPage(i)}
-                  className={`h-2 rounded-full transition-all cursor-pointer ${
-                    currentReviewPage === i
-                      ? 'w-7 bg-emerald-700'
-                      : 'w-2 bg-stone-300 hover:bg-stone-400'
-                  }`}
-                  aria-label={`Go to reviews page ${i + 1}`}
-                />
-              ))}
-            </div>
+              {/* Pagination Indicators */}
+              <div className="flex justify-center items-center gap-2 mt-6 pt-2">
+                {reviewPages.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => scrollToReviewPage(i)}
+                    className={`h-2 rounded-full transition-all cursor-pointer ${currentReviewPage === i
+                        ? 'w-7 bg-emerald-700'
+                        : 'w-2 bg-stone-300 hover:bg-stone-400'
+                      }`}
+                    aria-label={`Go to reviews page ${i + 1}`}
+                  />
+                ))}
+              </div>
 
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
         {/* 5. Call to Action */}
         <div className="text-center mb-24">
