@@ -46,6 +46,41 @@ const PAGE_TO_HASH = {
   'Cookie Policy': 'cookies',
 };
 
+const PAGE_SEO = {
+  'Home': {
+    title: 'Anne TH Jackson Psychotherapy | BABCP-Accredited CBT Therapist',
+    description: 'Compassionate, evidence-based online Cognitive Behavioural Therapy (CBT) and eating disorder specialist based in Kent, UK.',
+  },
+  'About Anne': {
+    title: 'About Anne TH Jackson | BABCP-Accredited CBT Psychotherapist',
+    description: 'Learn about Anne TH Jackson, BABCP-accredited psychotherapist in Kent offering online therapy across the UK.',
+  },
+  'Therapies': {
+    title: 'CBT & Eating Disorder Therapies | Anne TH Jackson Psychotherapy',
+    description: 'Specialist CBT treatments for anxiety, depression, ARFID, Anorexia, Bulimia, and Binge Eating Disorder.',
+  },
+  'Fees': {
+    title: 'Session Fees & Therapy Pricing | Anne TH Jackson Psychotherapy',
+    description: 'Transparent therapy session fees: £40 initial consultation, £80 standard session, £420 6-session block. Online CBT therapy across the UK.',
+  },
+  'FAQs': {
+    title: 'Frequently Asked Questions | Anne TH Jackson Psychotherapy',
+    description: 'Answers to common questions about starting Cognitive Behavioural Therapy, online sessions, confidentiality, and what to expect.',
+  },
+  'Contact': {
+    title: 'Book a Consultation | Contact Anne TH Jackson Psychotherapy',
+    description: 'Get in touch to arrange an initial consultation or ask any questions about starting therapy.',
+  },
+  'Privacy': {
+    title: 'Privacy Policy & Confidentiality | Anne TH Jackson Psychotherapy',
+    description: 'How your personal data and health records are securely handled in compliance with GDPR and ICO regulations.',
+  },
+  'Cookies': {
+    title: 'Cookie Policy | Anne TH Jackson Psychotherapy',
+    description: 'Details on how cookies and local storage are used on this practice website.',
+  },
+};
+
 const normalizeHashToPage = (hash) => {
   if (!hash) return null;
   const clean = decodeURIComponent(hash).toLowerCase().replace(/^#\/?/, '').trim();
@@ -115,6 +150,21 @@ export default function App() {
 
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [currentPage]);
+
+  // Dynamically update document title and meta description for SEO
+  useEffect(() => {
+    const seo = PAGE_SEO[currentPage] || PAGE_SEO['Home'];
+    if (seo) {
+      document.title = seo.title;
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute('content', seo.description);
+    }
   }, [currentPage]);
 
   const handleNavClick = (item) => {
