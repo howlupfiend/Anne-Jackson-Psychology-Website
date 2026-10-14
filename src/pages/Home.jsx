@@ -133,7 +133,7 @@ export default function Home({ navigate }) {
             I offer a calm, compassionate and safe space where you can feel heard, understood and supported to make meaningful and sustainable changes.
           </p>
           <p className="text-lg text-stone-600 leading-relaxed font-medium">
-            I’m a {practiceInfo.qualification} with over 20 years’ experience working within NHS mental health services supporting adults with difficulties including eating disorders, anxiety, depression, and trauma.
+            I’m a {practiceInfo.qualification} with over 20 years’ experience working within NHS mental health services supporting adults with difficulties including eating disorders, anxiety, depression, trauma and neurodivergence.
           </p>
         </div>
 
