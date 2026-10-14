@@ -133,7 +133,7 @@ export default function Home({ navigate }) {
             I offer a calm, compassionate and safe space where you can feel heard, understood and supported to make meaningful and sustainable changes.
           </p>
           <p className="text-lg text-stone-600 leading-relaxed font-medium">
-            I’m a {practiceInfo.qualification} with over 20 years’ experience supporting adults with difficulties including eating disorders, anxiety, depression, and trauma.
+            I’m a {practiceInfo.qualification} with over 20 years’ experience working within NHS mental health services supporting adults with difficulties including eating disorders, anxiety, depression, and trauma.
           </p>
         </div>
 
@@ -371,8 +371,8 @@ export default function Home({ navigate }) {
                     type="button"
                     onClick={() => scrollToReviewPage(i)}
                     className={`h-2 rounded-full transition-all cursor-pointer ${currentReviewPage === i
-                        ? 'w-7 bg-emerald-700'
-                        : 'w-2 bg-stone-300 hover:bg-stone-400'
+                      ? 'w-7 bg-emerald-700'
+                      : 'w-2 bg-stone-300 hover:bg-stone-400'
                       }`}
                     aria-label={`Go to reviews page ${i + 1}`}
                   />

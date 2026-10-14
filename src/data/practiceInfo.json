@@ -15,5 +15,21 @@
     "immediate": "999",
     "nhsMentalHealth": "111",
     "disclaimer": "This practice is not an emergency or crisis service. If you or someone else is in immediate danger, please call 999 or go to your nearest A&E. For urgent mental health support, call NHS 111, contact your GP, or reach out to your local mental health service."
-  }
+  },
+  "directoryProfiles": [
+    {
+      "name": "Psychology Today",
+      "shortName": "Psychology Today",
+      "url": "https://www.psychologytoday.com/gb/counselling/anne-th-jackson-sevenoaks/1858538",
+      "label": "Verified by Psychology Today",
+      "badge": "Verified Member"
+    },
+    {
+      "name": "Counselling Directory",
+      "shortName": "Counselling Directory",
+      "url": "https://www.counselling-directory.org.uk/counsellors/anne-jackson-2",
+      "label": "Listed on Counselling Directory",
+      "badge": "Verified Profile"
+    }
+  ]
 }

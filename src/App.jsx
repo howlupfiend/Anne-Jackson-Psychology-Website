@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ExternalLink } from 'lucide-react';
 import bluebellPhoto from './assets/bluebell.jpg';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -368,6 +368,30 @@ export default function App() {
               <p className="text-xs text-stone-400 italic">
                 {companyName} est. {practiceInfo.established}
               </p>
+
+              {/* Verified Directory Profiles for SEO & Patient Trust */}
+              {practiceInfo.directoryProfiles && practiceInfo.directoryProfiles.length > 0 && (
+                <div className="pt-3 border-t border-stone-800/80">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 block mb-2">
+                    Verified Directory Profiles
+                  </span>
+                  <div className="flex flex-col gap-1.5">
+                    {practiceInfo.directoryProfiles.map((profile) => (
+                      <a
+                        key={profile.name}
+                        href={profile.url}
+                        target="_blank"
+                        rel="me noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs text-stone-300 hover:text-emerald-400 transition-colors group"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 group-hover:scale-125 transition-transform"></span>
+                        <span>{profile.name}</span>
+                        <ExternalLink className="w-3 h-3 text-stone-500 group-hover:text-emerald-400 transition-colors ml-0.5" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

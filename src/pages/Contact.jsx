@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 import contactData from '../data/contact.json';
 import practiceInfo from '../data/practiceInfo.json';
 
@@ -196,6 +197,27 @@ export default function Contact() {
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
+
+      {/* Verified Directory Profiles Reassurance */}
+      {practiceInfo.directoryProfiles && practiceInfo.directoryProfiles.length > 0 && (
+        <div className="mt-8 text-center text-sm text-stone-500">
+          <p className="mb-2">You can also view my verified professional profiles on:</p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {practiceInfo.directoryProfiles.map((profile) => (
+              <a
+                key={profile.name}
+                href={profile.url}
+                target="_blank"
+                rel="me noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 hover:text-emerald-800 underline underline-offset-4 group cursor-pointer"
+              >
+                <span>{profile.name}</span>
+                <ExternalLink className="w-3 h-3 text-stone-400 group-hover:text-emerald-700 transition-colors" />
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* The Toast UI */}
       <div 
