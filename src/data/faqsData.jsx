@@ -332,6 +332,50 @@ export const getFaqs = (navigate) => [
     )
   },
   {
+    id: 'health-insurance',
+    category: 'Fees & Privacy',
+    q: 'Can I pay for therapy using private health insurance?',
+    keywords: ['health insurance', 'private health insurance', 'private medical insurance', 'insurance', 'aviva', 'axa', 'axa health', 'wpa', 'bupa', 'policy', 'cover', 'authorisation code', 'pre-authorisation', 'claim'],
+    plainText: 'I work with clients who are accessing therapy through the following private health insurance providers: Aviva, AXA Health, and WPA. Depending on the terms of your policy, your insurance may cover some or all of the cost of your therapy sessions. I recommend contacting your insurer before arranging an appointment to confirm your available benefits, the extent of your cover, and whether a referral or prior authorisation is required. To help arrange your sessions, I will need your insurance membership details and any relevant pre-authorisation code. You will be responsible for any costs that are not covered by your policy.',
+    a: (
+      <div className="space-y-3">
+        <p>
+          I work with clients who are accessing therapy through the following private health insurance providers:
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 pl-2 text-stone-700 font-medium">
+          <li className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0" />
+            <span>Aviva</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0" />
+            <span>AXA Health</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0" />
+            <span>WPA</span>
+          </li>
+        </ul>
+        <p>
+          Depending on the terms of your policy, your insurance may cover some or all of the cost of your therapy sessions. I recommend contacting your insurer before arranging an appointment to confirm your available benefits, the extent of your cover, and whether a referral or prior authorisation is required.
+        </p>
+        <p>
+          To help arrange your sessions, I will need your insurance membership details and any relevant pre-authorisation code. You will be responsible for any costs that are not covered by your policy.
+        </p>
+        <p>
+          Full fee and policy details are available on the{' '}
+          <button
+            onClick={() => navigate && navigate('Fees')}
+            className="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2 cursor-pointer"
+          >
+            Fees Page
+          </button>
+          .
+        </p>
+      </div>
+    )
+  },
+  {
     id: 'is-therapy-right-for-me',
     category: 'Starting Therapy',
     q: 'How do I know whether therapy with you is right for me?',

@@ -1,7 +1,7 @@
 // Synonym groups: any term in a group automatically expands bidirectionally to all other terms in that group
 export const SYNONYM_GROUPS = [
   ['fee', 'fees', 'cost', 'costs', 'price', 'prices', 'pricing', 'charge', 'charges', 'rate', 'rates', 'payment', 'payments', 'pay', 'session fee', 'money', 'affordable', 'how much'],
-  ['insurance', 'bupa', 'axa', 'aviva', 'vitality', 'private medical insurance', 'health insurance', 'health cover', 'insurance cover'],
+  ['insurance', 'bupa', 'axa', 'axa health', 'aviva', 'wpa', 'vitality', 'private medical insurance', 'health insurance', 'health cover', 'insurance cover'],
   ['session', 'sessions', 'appointment', 'appointments', 'consultation', 'consultations', 'booking', 'book appointment', 'schedule'],
   ['cancel', 'cancellation', 'cancellations', 'rearrange', 'reschedule', 'cancel appointment', 'rearrange appointment', 'cancellation fee', 'missed appointment'],
   ['online', 'remote', 'zoom', 'teams', 'virtual', 'video', 'video call', 'telehealth', 'online therapy'],

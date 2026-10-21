@@ -6,7 +6,12 @@
   "location": "Based in Kent | Online therapy for adults",
   "email": "Anne.TH.JacksonCBP@gmail.com",
   "responseTime": "within two working days",
-  "icoRegistration": "CSN8376103",
+  "icoRegistration": "ZC133432",
+  "insuranceProviders": [
+    "Aviva",
+    "AXA Health",
+    "WPA"
+  ],
   "established": "2026",
   "retentionPeriod": "7 years",
   "contactEndpoint": "/contact.php",

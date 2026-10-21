@@ -24,6 +24,19 @@
       "isHighlighted": true
     }
   ],
+  "insurance": {
+    "title": "Private Health Insurance",
+    "intro": "I work with clients who are accessing therapy through the following private health insurance providers:",
+    "providers": [
+      "Aviva",
+      "AXA Health",
+      "WPA"
+    ],
+    "notes": [
+      "Depending on the terms of your policy, your insurance may cover some or all of the cost of your therapy sessions. I recommend contacting your insurer before arranging an appointment to confirm your available benefits, the extent of your cover, and whether a referral or prior authorisation is required.",
+      "To help arrange your sessions, I will need your insurance membership details and any relevant pre-authorisation code. You will be responsible for any costs that are not covered by your policy."
+    ]
+  },
   "paymentTerms": [
     "Payment is due **48 hours before** each session.",
     "Payment methods include bank transfer, secure card payments via Stripe, or other mutually agreed methods."

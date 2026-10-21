@@ -1,3 +1,4 @@
+import { ShieldCheck } from 'lucide-react';
 import feesData from '../data/fees.json';
 
 const renderFormattedText = (text) => {
@@ -10,7 +11,7 @@ const renderFormattedText = (text) => {
 };
 
 export default function Fees({ navigate }) {
-  const { pricingTiers, paymentTerms, cancellationTerms } = feesData;
+  const { pricingTiers, paymentTerms, cancellationTerms, insurance } = feesData;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -56,7 +57,7 @@ export default function Fees({ navigate }) {
       </div>
 
       {/* Policies Section */}
-      <div className="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden">
+      <div className="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden mb-16">
         <div className="grid md:grid-cols-2">
           
           {/* Payment */}
@@ -87,6 +88,42 @@ export default function Fees({ navigate }) {
           
         </div>
       </div>
+
+      {/* Private Health Insurance Section */}
+      {insurance && (
+        <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 mb-16">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 flex-shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <h3 className="text-2xl font-serif text-[#242221]">
+              {insurance.title}
+            </h3>
+          </div>
+
+          <p className="text-stone-600 leading-relaxed mb-6">
+            {insurance.intro}
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            {insurance.providers.map((provider) => (
+              <div
+                key={provider}
+                className="flex items-center gap-3 p-4 rounded-2xl bg-stone-50 border border-stone-200/70"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 flex-shrink-0" />
+                <span className="font-medium text-stone-800">{provider}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-4 text-stone-600 leading-relaxed border-t border-stone-100 pt-6">
+            {insurance.notes.map((note, index) => (
+              <p key={index}>{note}</p>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Call to Action */}
       <div className="mt-16 text-center">
