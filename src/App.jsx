@@ -60,8 +60,8 @@ const PAGE_SEO = {
     description: 'Specialist CBT treatments for anxiety, depression, ARFID, Anorexia, Bulimia, and Binge Eating Disorder.',
   },
   'Fees': {
-    title: 'Session Fees & Therapy Pricing | Anne TH Jackson Psychotherapy',
-    description: 'Transparent therapy session fees: £40 initial consultation, £80 standard session, £420 6-session block. Online CBT therapy across the UK.',
+    title: 'Session Fees & Concessionary Rates | Anne TH Jackson Psychotherapy',
+    description: 'Transparent therapy session fees: £40 initial consultation, £80 standard session, £420 6-session block, concessionary rates, and insurance options. Online CBT therapy across the UK.',
   },
   'FAQs': {
     title: 'Frequently Asked Questions | Anne TH Jackson Psychotherapy',

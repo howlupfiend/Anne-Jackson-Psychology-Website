@@ -1,4 +1,4 @@
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, HeartHandshake } from 'lucide-react';
 import feesData from '../data/fees.json';
 
 const renderFormattedText = (text) => {
@@ -11,7 +11,7 @@ const renderFormattedText = (text) => {
 };
 
 export default function Fees({ navigate }) {
-  const { pricingTiers, paymentTerms, cancellationTerms, insurance } = feesData;
+  const { pricingTiers, paymentTerms, cancellationTerms, insurance, concessions } = feesData;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -27,7 +27,7 @@ export default function Fees({ navigate }) {
       </div>
 
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+      <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8 sm:mb-10">
         {pricingTiers.map((tier) => (
           <div
             key={tier.id}
@@ -57,7 +57,7 @@ export default function Fees({ navigate }) {
       </div>
 
       {/* Policies Section */}
-      <div className="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden mb-16">
+      <div className="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden mb-6 sm:mb-8">
         <div className="grid md:grid-cols-2">
           
           {/* Payment */}
@@ -91,7 +91,7 @@ export default function Fees({ navigate }) {
 
       {/* Private Health Insurance Section */}
       {insurance && (
-        <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 mb-16">
+        <div className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 mb-6 sm:mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 flex-shrink-0">
               <ShieldCheck className="w-5 h-5" />
@@ -125,8 +125,60 @@ export default function Fees({ navigate }) {
         </div>
       )}
 
+      {/* Concessionary Rates Section */}
+      {concessions && (
+        <div id="concessionary-rates" className="bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 mb-10 sm:mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 flex-shrink-0">
+              <HeartHandshake className="w-5 h-5" />
+            </div>
+            <h3 className="text-2xl font-serif text-[#242221]">
+              {concessions.title}
+            </h3>
+          </div>
+
+          <p className="text-stone-600 leading-relaxed mb-6">
+            {concessions.intro}
+          </p>
+
+          {concessions.eligibleGroups && concessions.eligibleGroups.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+              {concessions.eligibleGroups.map((group, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 p-3.5 rounded-2xl bg-stone-50 border border-stone-200/70"
+                >
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 flex-shrink-0" />
+                  <span className="font-medium text-stone-800 text-sm">{group}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="space-y-4 text-stone-600 leading-relaxed border-t border-stone-100 pt-6">
+            <p>
+              {concessions.notes.includes('get in touch') ? (
+                <>
+                  {concessions.notes.split('get in touch')[0]}
+                  <button
+                    type="button"
+                    onClick={() => navigate('Contact')}
+                    className="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2 cursor-pointer inline p-0 bg-transparent border-none"
+                  >
+                    get in touch
+                  </button>
+                  {concessions.notes.split('get in touch')[1]}
+                </>
+              ) : (
+                concessions.notes
+              )}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Call to Action */}
-      <div className="mt-16 text-center">
+      <div className="mt-8 sm:mt-10 text-center">
         <p className="text-stone-600 mb-6">
           Ready to begin? Contact me to arrange your initial consultation.
         </p>

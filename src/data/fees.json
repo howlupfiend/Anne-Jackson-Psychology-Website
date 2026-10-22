@@ -24,6 +24,19 @@
       "isHighlighted": true
     }
   ],
+  "concessions": {
+    "title": "Concessionary Rates",
+    "intro": "I believe that access to psychological therapy should be as inclusive as possible. Reduced-fee sessions may be available for key workers, veterans and former members of the Armed Forces, students, refugees, older adults, and people on a low income or who are currently unemployed.",
+    "eligibleGroups": [
+      "Key workers",
+      "Veterans & former members of the Armed Forces",
+      "Students",
+      "Refugees",
+      "Older adults",
+      "People on a low income or currently unemployed"
+    ],
+    "notes": "If you would like to enquire about a concessionary rate, please feel free to get in touch. I will be happy to discuss your circumstances and explain the options available."
+  },
   "insurance": {
     "title": "Private Health Insurance",
     "intro": "I work with clients who are accessing therapy through the following private health insurance providers:",

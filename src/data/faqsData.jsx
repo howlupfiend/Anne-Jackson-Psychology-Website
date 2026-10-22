@@ -311,12 +311,12 @@ export const getFaqs = (navigate) => [
     id: 'cost-of-therapy',
     category: 'Fees & Privacy',
     q: 'How much does therapy cost?',
-    keywords: ['fee', 'fees', 'cost', 'costs', 'pricing', 'price', 'rates', 'pay', 'payment', 'stripe', 'bank transfer', 'session fee', 'prices', 'how much'],
-    plainText: 'My current fees and payment arrangements are provided in the Fees Page and are also outlined in the Therapy Agreement. Payment can be made securely online using Stripe or by bank transfer.',
+    keywords: ['fee', 'fees', 'cost', 'costs', 'pricing', 'price', 'rates', 'pay', 'payment', 'stripe', 'bank transfer', 'session fee', 'prices', 'how much', 'concession', 'concessions', 'concessionary rates', 'reduced fee', 'discount', 'student discount', 'low income'],
+    plainText: 'My current fees and payment arrangements are provided in the Fees Page, including concessionary rates and insurance options, and are also outlined in the Therapy Agreement. Payment can be made securely online using Stripe or by bank transfer.',
     a: (
       <div className="space-y-3">
         <p>
-          My current fees and payment arrangements are provided in the{' '}
+          My current fees, concessionary rates, and payment arrangements are provided in the{' '}
           <button
             onClick={() => navigate && navigate('Fees')}
             className="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2 cursor-pointer"
