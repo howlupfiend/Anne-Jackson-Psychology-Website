@@ -5,8 +5,46 @@ import aboutData from '../data/about.json';
 import practiceInfo from '../data/practiceInfo.json';
 
 export default function About() {
+  const profileSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    'name': 'About Anne Jackson | BABCP-Accredited CBT Psychotherapist',
+    'mainEntity': {
+      '@type': 'Person',
+      'name': 'Anne TH Jackson',
+      'alternateName': ['Anne Jackson', 'Anne T.H. Jackson'],
+      'jobTitle': 'Cognitive Behavioural Psychotherapist & Specialist CBT Therapist for Eating Disorders',
+      'description': aboutData.blurb ? aboutData.blurb.join('. ') : '',
+      'knowsAbout': [
+        'Cognitive Behavioural Therapy (CBT)',
+        'Eating Disorders',
+        'Disordered Eating',
+        'CBT Supervision for Eating Disorders',
+        'Adult Eating Disorders',
+      ],
+      'memberOf': {
+        '@type': 'Organization',
+        'name': 'British Association for Behavioural and Cognitive Psychotherapies (BABCP)',
+        'member': {
+          '@type': 'OrganizationRole',
+          'roleName': 'Secretary for the Eating Disorders Specialist Interest Group',
+        },
+      },
+      'alumniOf': {
+        '@type': 'EducationalOrganization',
+        'name': 'University College London (UCL)',
+      },
+    },
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      {/* Schema.org ProfilePage Structured Data for Search Engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
+      />
+
       {/* Side-by-Side Layout Grid */}
       <div className="grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
         {/* Image & Credentials Column (Takes up 5 out of 12 columns on desktop) */}
@@ -71,11 +109,36 @@ export default function About() {
             </p>
           </div>
         </div>
+
         {/* Text Column (Takes up 7 out of 12 columns on desktop) */}
         <div className="md:col-span-7 lg:col-span-8 space-y-6">
-          <h1 className="text-4xl lg:text-5xl font-serif text-[#242221] mb-8">
+          <h1 className="text-4xl lg:text-5xl font-serif text-[#242221]">
             {aboutData.title}
           </h1>
+
+          {/* Key Specialisms / Blurb Box with semantic markup for SEO */}
+          {aboutData.blurb && aboutData.blurb.length > 0 && (
+            <section
+              aria-label="Professional Credentials and Specialist Roles"
+              className="bg-emerald-50/60 p-6 sm:p-7 rounded-3xl border border-emerald-100 shadow-xs"
+            >
+              <h2 className="sr-only">Professional Credentials and Specialist Roles</h2>
+              <ul className="space-y-3">
+                {aboutData.blurb.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-stone-800 text-base md:text-lg font-medium leading-relaxed"
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full bg-emerald-600 mt-2.5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <div className="text-lg text-stone-600 leading-relaxed space-y-6">
             {aboutData.paragraphs.map((para, index) => (

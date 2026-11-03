@@ -50,10 +50,12 @@ const PAGE_SEO = {
   'Home': {
     title: 'Anne Jackson Psychotherapy | BABCP-Accredited CBT Therapist',
     description: 'Anne Jackson (Anne TH Jackson) - Compassionate, evidence-based online Cognitive Behavioural Therapy (CBT) and eating disorder specialist based in Kent, UK.',
+    keywords: 'Anne Jackson, Anne Jackson psychotherapy, Cognitive Behavioural Psychotherapist, Specialist CBT Therapist, eating disorders, disordered eating, BABCP Eating Disorders Specialist Interest Group, UCL CBT supervision, online CBT therapist Kent UK',
   },
   'About Anne': {
-    title: 'About Anne Jackson | BABCP-Accredited CBT Psychotherapist',
-    description: 'Learn about Anne Jackson (Anne TH Jackson), BABCP-accredited psychotherapist in Kent offering online therapy across the UK.',
+    title: 'About Anne Jackson | BABCP-Accredited CBT & Eating Disorder Specialist',
+    description: 'Anne Jackson: BABCP-accredited Cognitive Behavioural Psychotherapist & specialist CBT therapist for adult eating disorders & disordered eating. BABCP Eating Disorders SIG Secretary; UCL supervision trained.',
+    keywords: 'Anne Jackson, Cognitive Behavioural Psychotherapist, Specialist CBT Therapist eating disorders, disordered eating, Secretary Eating Disorders Specialist Interest Group BABCP, CBT Supervision for Eating Disorders UCL, UCL CBT supervision, adult eating disorders, BABCP accredited psychotherapist Kent',
   },
   'Therapies': {
     title: 'CBT & Eating Disorder Therapies | Anne TH Jackson Psychotherapy',
@@ -152,7 +154,7 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, [currentPage]);
 
-  // Dynamically update document title and meta description for SEO
+  // Dynamically update document title, meta description, og tags, and keywords for SEO
   useEffect(() => {
     const seo = PAGE_SEO[currentPage] || PAGE_SEO['Home'];
     if (seo) {
@@ -164,6 +166,23 @@ export default function App() {
         document.head.appendChild(metaDesc);
       }
       metaDesc.setAttribute('content', seo.description);
+
+      // Dynamically update Open Graph tags for social sharing and search previews
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', seo.title);
+
+      let ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', seo.description);
+
+      if (seo.keywords) {
+        let metaKeywords = document.querySelector('meta[name="keywords"]');
+        if (!metaKeywords) {
+          metaKeywords = document.createElement('meta');
+          metaKeywords.setAttribute('name', 'keywords');
+          document.head.appendChild(metaKeywords);
+        }
+        metaKeywords.setAttribute('content', seo.keywords);
+      }
     }
   }, [currentPage]);
 

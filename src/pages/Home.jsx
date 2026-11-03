@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { AlertCircle, Quote, Star, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { AlertCircle, Quote, Star, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import bluebellPhoto from '../assets/bluebell.jpg';
 import homephoto from '../assets/bluebell-field.jpeg'; // Ensure this matches your filename
 import reviewPages from '../data/reviews.json';
@@ -30,7 +30,7 @@ export default function Home({ navigate }) {
 
   // Horizontal Scrolling Review Carousel State
   // Set to true once real client reviews are ready to display
-  const SHOW_REVIEWS_BANNER = false;
+  const SHOW_REVIEWS_BANNER = true;
   const [currentReviewPage, setCurrentReviewPage] = useState(0);
   const reviewScrollRef = useRef(null);
 
@@ -264,47 +264,62 @@ export default function Home({ navigate }) {
               {/* Banner Header: Title, Stars, and Pagination Controls */}
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
                 <div>
-                  <div className="flex items-center gap-1 text-amber-400 mb-2">
+                  <div className="flex items-center gap-1.5 text-amber-400 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
                     <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full ml-2 border border-emerald-200/60">
-                      5.0 Client Feedback
+                      5.0 ★ Google Reviews
                     </span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-serif text-[#242221]">
                     Client Experiences &amp; Reviews
                   </h3>
                   <p className="text-sm text-stone-500 mt-1">
-                    Read reflections from individuals supported with CBT, anxiety, and eating difficulties.
+                    Real reflections shared by clients and families supported by Anne.
                   </p>
                 </div>
 
-                {/* Navigation Controls */}
-                <div className="flex items-center gap-2.5 self-start sm:self-auto">
-                  <button
-                    type="button"
-                    onClick={handlePrevReviewPage}
-                    disabled={currentReviewPage === 0}
-                    className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
-                    aria-label="Previous reviews page"
+                {/* Google Profile Link & Navigation Controls */}
+                <div className="flex items-center gap-3 self-start sm:self-auto">
+                  <a
+                    href="https://share.google/G5Cx0wF16NGlZHFrw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-emerald-800 hover:border-emerald-300 transition-all text-xs font-medium shadow-2xs group cursor-pointer"
+                    aria-label="View Google Business Profile"
                   >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
+                    <span>View on Google</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-700 transition-transform group-hover:translate-x-0.5" />
+                  </a>
 
-                  <div className="text-xs font-semibold text-stone-500 px-1">
-                    Page {currentReviewPage + 1} of {reviewPages.length}
-                  </div>
+                  {reviewPages.length > 1 && (
+                    <div className="flex items-center gap-2.5">
+                    <button
+                      type="button"
+                      onClick={handlePrevReviewPage}
+                      disabled={currentReviewPage === 0}
+                      className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
+                      aria-label="Previous reviews page"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
 
-                  <button
-                    type="button"
-                    onClick={handleNextReviewPage}
-                    disabled={currentReviewPage === reviewPages.length - 1}
-                    className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
-                    aria-label="Next reviews page"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
+                    <div className="text-xs font-semibold text-stone-500 px-1">
+                      Page {currentReviewPage + 1} of {reviewPages.length}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleNextReviewPage}
+                      disabled={currentReviewPage === reviewPages.length - 1}
+                      className="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-600 hover:text-emerald-700 hover:border-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
+                      aria-label="Next reviews page"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -318,66 +333,90 @@ export default function Home({ navigate }) {
                 {reviewPages.map((page, pageIdx) => (
                   <div
                     key={pageIdx}
-                    className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 snap-start"
+                    className={`w-full flex-shrink-0 grid gap-6 snap-start ${
+                      page.length === 2
+                        ? 'grid-cols-1 md:grid-cols-2'
+                        : page.length === 1
+                        ? 'grid-cols-1 max-w-2xl mx-auto'
+                        : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'
+                    }`}
                   >
                     {page.map((review) => (
                       <div
                         key={review.id}
-                        className="bg-white rounded-2xl p-6 border border-stone-200/90 shadow-2xs hover:shadow-sm transition-shadow flex flex-col justify-between"
+                        className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-2xs hover:shadow-sm transition-shadow flex flex-col justify-between"
                       >
                         <div>
-                          {/* Star Rating and Quote mark */}
-                          <div className="flex items-center justify-between gap-2 mb-3">
-                            <div className="flex items-center gap-0.5 text-amber-400">
-                              {[...Array(review.stars)].map((_, i) => (
-                                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                              ))}
+                          {/* Author Initials, Star Rating, and Quote mark */}
+                          <div className="flex items-center justify-between gap-3 mb-4">
+                            <div className="flex items-center gap-2.5">
+                              <span className="font-semibold text-stone-900 text-base">
+                                {review.author}
+                              </span>
+                              <div className="flex items-center gap-0.5 text-amber-400">
+                                {[...Array(review.stars)].map((_, i) => (
+                                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                                ))}
+                              </div>
                             </div>
-                            <Quote className="w-4 h-4 text-emerald-600/50 flex-shrink-0" />
+                            <a
+                              href="https://share.google/G5Cx0wF16NGlZHFrw"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-stone-400 hover:text-emerald-700 transition-colors p-1.5 -mr-1.5 -mt-1 rounded-lg hover:bg-emerald-50 text-xs font-medium group cursor-pointer"
+                              title="View on Google"
+                              aria-label="View on Google Business Profile"
+                            >
+                              <span className="text-[11px] text-stone-400 group-hover:text-emerald-700">Google</span>
+                              <ExternalLink className="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-700 transition-transform group-hover:translate-x-0.5" />
+                            </a>
                           </div>
 
-                          {/* Review Title */}
-                          <h4 className="font-serif text-base font-semibold text-stone-900 mb-2 leading-snug">
-                            {review.title}
-                          </h4>
-
                           {/* Review Quote Body */}
-                          <p className="text-stone-600 text-xs sm:text-sm leading-relaxed italic mb-4">
+                          <p className="text-stone-600 text-sm sm:text-[15px] leading-relaxed italic mb-6">
                             &ldquo;{review.quote}&rdquo;
                           </p>
                         </div>
 
                         {/* Review Footer Metadata */}
-                        <div className="pt-3 border-t border-stone-100 flex flex-col gap-1 text-xs">
-                          <div className="flex items-center justify-between">
-                            <span className="font-medium text-stone-800">{review.author}</span>
-                            <span className="text-[10px] text-stone-400 uppercase tracking-wider">{review.date}</span>
+                        {review.date && (
+                          <div className="pt-3 border-t border-stone-100 flex items-center justify-end text-xs">
+                            <a
+                              href="https://share.google/G5Cx0wF16NGlZHFrw"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-800 bg-emerald-50 hover:bg-emerald-100/80 px-2.5 py-1 rounded-full border border-emerald-200/60 transition-colors cursor-pointer group"
+                              title="Verify on Google"
+                            >
+                              <span>{review.date}</span>
+                              <ExternalLink className="w-3 h-3 text-emerald-700/70 group-hover:text-emerald-800" />
+                            </a>
                           </div>
-                          <span className="inline-block text-[11px] font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md self-start">
-                            {review.tag}
-                          </span>
-                        </div>
+                        )}
                       </div>
                     ))}
                   </div>
                 ))}
               </div>
 
-              {/* Pagination Indicators */}
-              <div className="flex justify-center items-center gap-2 mt-6 pt-2">
-                {reviewPages.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => scrollToReviewPage(i)}
-                    className={`h-2 rounded-full transition-all cursor-pointer ${currentReviewPage === i
-                      ? 'w-7 bg-emerald-700'
-                      : 'w-2 bg-stone-300 hover:bg-stone-400'
+              {/* Pagination Indicators (Only shown when there are multiple pages) */}
+              {reviewPages.length > 1 && (
+                <div className="flex justify-center items-center gap-2 mt-6 pt-2">
+                  {reviewPages.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => scrollToReviewPage(i)}
+                      className={`h-2 rounded-full transition-all cursor-pointer ${
+                        currentReviewPage === i
+                          ? 'w-7 bg-emerald-700'
+                          : 'w-2 bg-stone-300 hover:bg-stone-400'
                       }`}
-                    aria-label={`Go to reviews page ${i + 1}`}
-                  />
-                ))}
-              </div>
+                      aria-label={`Go to reviews page ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
 
             </div>
           </div>
